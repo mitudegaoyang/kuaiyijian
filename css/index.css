@@ -2,6 +2,9 @@ header {
   background-color: #333;
   color: #fff;
 }
+nav img {
+  width: 100%;
+}
 footer {
   background-color: #333;
   color: #fff;
