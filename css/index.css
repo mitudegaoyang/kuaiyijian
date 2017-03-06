@@ -2,8 +2,44 @@ header {
   background-color: #333;
   color: #fff;
 }
-nav img {
+nav .blog_banner_box {
+  position: relative;
+}
+nav .blog_banner_box img {
   width: 100%;
+}
+nav .blog_banner_box .blog_banner_left {
+  position: absolute;
+  left: 0;
+  top: 50%;
+}
+nav .blog_banner_box .blog_banner_right {
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+nav .blog_banner_box .blog_banner_btn {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+}
+nav .blog_banner_box .blog_banner_btn ul {
+  position: relative;
+  left: -50%;
+  bottom: 0;
+}
+nav .blog_banner_box .blog_banner_btn ul li {
+  float: left;
+  margin: 0 10px;
+}
+nav .blog_banner_box .blog_banner_btn ul li b {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  text-align: center;
+  background: #f0f0f0;
 }
 footer {
   background-color: #333;

@@ -3,8 +3,44 @@ header{
   color: #fff;
 }
 nav{
-  img{
-    width: 100%;
+  .blog_banner_box{
+    position: relative;
+    img{
+      width: 100%;
+    }
+    .blog_banner_left{
+      position: absolute;
+      left: 0;
+      top: 50%;
+    }
+    .blog_banner_right{
+      position: absolute;
+      right: 0;
+      top: 50%;
+    }
+    .blog_banner_btn{
+      position: absolute;
+      left: 50%;
+      bottom: 10px;
+      ul{
+        position: relative;
+        left: -50%;
+        bottom: 0;
+        li{
+          float: left;
+          margin: 0 10px;
+          b{
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            border: 1px solid #ddd;
+            border-radius: 50%;
+            text-align: center;
+            background: #f0f0f0;
+          }
+        }
+      }
+    }
   }
 }
 footer{
