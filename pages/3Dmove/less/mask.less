@@ -1,0 +1,201 @@
+/*通用*/
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+}
+html{
+  height: 100%;
+}
+body{
+  font-family: "微软雅黑";
+  font-size: 14px;
+  height: 100%;
+  width: 100%;
+}
+
+.main{
+  width:100%;
+}
+
+.img_responsive {
+  display: inline-block;
+  height: auto;
+  max-width: 100%;
+}
+/*通用蒙版*/
+.mask_white{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: alpha(opacity = 75);
+  -moz-opacity: .75;
+  -khtml-opacity: .75;
+  opacity: .75;
+  background-color: #fff;
+  z-index: 9998;
+  display: none;
+}
+
+.mask_black{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: alpha(opacity = 75);
+  -moz-opacity: .75;
+  -khtml-opacity: .75;
+  opacity: .75;
+  background-color: #000;
+  z-index: 9998;
+  display: block;
+}
+
+.mask_black_noclick{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: alpha(opacity = 75);
+  -moz-opacity: .75;
+  -khtml-opacity: .75;
+  opacity: .75;
+  background-color: #000;
+  z-index: 9998;
+  display: none;
+}
+
+.mask_common{
+  position: fixed;
+  width: 220px;
+  height: 260px;
+  top: 50%;
+  left: 50%;
+  margin-left: -110px;
+  margin-top: -130px;
+  z-index: 10000;
+}
+
+.mask_box{
+  width:100%;
+  height:100%;
+  position: relative;
+  color: #ffffff;
+}
+
+.mask_close{
+  display: block;
+  width:80px;
+  height:30px;
+  margin: 0 auto;
+  margin-top: 20px;
+  line-height: 30px;
+  text-align: center;
+  color: #ffffff;
+  background-color:#fe6c64;
+  border-radius: 5px;
+  letter-spacing: 10px;
+  text-indent: 10px;
+}
+.mask_share{
+  width: 100%;
+  height: 100%;
+  opacity: 0.9;
+  position: fixed;
+  top:0;
+  z-index: 80000;
+  background-image: url("../images/share.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.page{
+  width:100%;
+  height: 100%;
+  position: relative;
+  background-color:grey;
+}
+/*进入页面初始弹窗*/
+.mb_start{
+  width: 70%;
+  height: 25rem;
+  position: absolute;
+  top:6rem;
+  left:15%;
+  //background:url("../img/bluebox.png") no-repeat;
+  background-size: 100% 25rem;
+  z-index: 9999;
+}
+.mb_rule{
+  width:80%;
+  height: 20rem;
+  margin: 1rem auto;
+  background-color:#fff;
+  text-align: center;
+}
+.mb_start_btn{
+  width: 5rem;
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+  margin: 0 auto;
+  background-color: khaki;
+}
+.mb_activity_rule{
+  width: 2.2rem;
+  height: 2.2rem;
+  background-color: khaki;
+  position: fixed;
+  bottom:1rem;
+  left:1rem;
+}
+.mb_rule_box{
+  width:70%;
+  height: 25rem;
+  position: absolute;
+  top: 6rem;
+  left:15%;
+  //background:url("../img/yellowbox.png") no-repeat;
+  background-size: 100% 25rem;
+  display: none;
+  z-index: 10001;
+
+}
+.mb_myprize{
+  width: 2.2rem;
+  height: 2.2rem;
+  background-color: khaki;
+  position: fixed;
+  bottom:1rem;
+  right:1rem;
+}
+
+.mb_prize_box{
+  width:70%;
+  height: 25rem;
+  position: absolute;
+  top: 6rem;
+  left:15%;
+  //background: url("../img/redbox.png") no-repeat;
+  background-size: 100% 25rem;
+  display: none;
+  z-index: 10000;
+
+}
+.mb_btn_help{
+  width:6rem;
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+  background-color: #feffa7;
+  position: absolute;
+  bottom: 1rem;
+  left:calc(50% - 3rem);
+}

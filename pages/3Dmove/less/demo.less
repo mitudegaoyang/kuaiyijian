@@ -1,0 +1,167 @@
+/* less Euro_quiz */
+/* +--------------------------------------------------------------------------
+// | Author: Merrier <953075999@qq.com> <http://> <Date:2016/5/11 22:27>
+// +--------------------------------------------------------------------------*/
+
+//引入全局less变量
+@import "../../../common_folder/less/Game_library";
+
+html{
+  body{
+    #main {
+      width: 100%;
+      background: url("../images/front.jpg");
+    }
+    //遮罩层
+    #page{
+      font-size: 0.8rem;
+      .mask_black{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        filter: ~"alpha(opacity = 75)";
+        -moz-opacity: .75;
+        -khtml-opacity: .75;
+        opacity: .75;
+        background-color: #000;
+        z-index: 50;
+        display: block;
+      }
+      .mb_start{
+        width: 70%;
+        height: 15rem;
+        position: absolute;
+        top:6rem;
+        left:15%;
+        background:url("../images/dwl/img/layerBlue.png") no-repeat;
+        background-size: 100% 15rem;
+        z-index: 100;
+        .mb_rule{
+          width:80%;
+          height: 70%;
+          margin: 1rem auto 1.4rem;
+          border-radius: 6px;
+          background-color:#fff;
+          .mb_rule_title{
+            text-align: center;
+          }
+        }
+        .mb_start_btn{
+          width: 4rem;
+          height: 1.5rem;
+          line-height: 1.5rem;
+          text-align: center;
+          margin: 0 auto;
+          background: url("../images/dwl/img/btnBgBlack.png");
+          background-size: 100% 1.5rem;
+          font-size: 0.7rem;
+          font-weight: 800;
+          font-family: flyer_0_Font_21_TYPE_0_ID_18_RAN_1481790638;
+        }
+      }
+      .mb_activity_rule{
+        width: 2.2rem;
+        height: 2.2rem;
+        background-color: khaki;
+        position: fixed;
+        bottom:1rem;
+        left:1rem;
+      }
+      .mb_rule_box{
+        width:70%;
+        height: 15rem;
+        position: absolute;
+        top: 6rem;
+        left:15%;
+        background:url("../images/dwl/img/layerYellow.png") no-repeat;
+        background-size: 100% 15rem;
+        display: none;
+        z-index: 100;
+        .mb_rule{
+          width:80%;
+          height: 70%;
+          margin: 1rem auto 1.4rem;
+          border-radius: 6px;
+          background-color:#fff;
+          .mb_rule_title{
+            text-align: center;
+          }
+          .mb_start_btn{
+            width: 4rem;
+            height: 1.5rem;
+            line-height: 1.5rem;
+            text-align: center;
+            margin: 0 auto;
+            background: url("../images/dwl/img/btnBgBlack.png");
+            background-size: 100% 1.5rem;
+            font-size: 0.7rem;
+            font-weight: 800;
+            font-family: flyer_0_Font_21_TYPE_0_ID_18_RAN_1481790638;
+          }
+        }
+        .mb_start_btn{
+          width: 4rem;
+          height: 1.5rem;
+          line-height: 1.5rem;
+          text-align: center;
+          margin: 0 auto;
+          background: url("../images/dwl/img/btnBgBlack.png");
+          background-size: 100% 1.5rem;
+          font-size: 0.7rem;
+          font-weight: 800;
+          font-family: flyer_0_Font_21_TYPE_0_ID_18_RAN_1481790638;
+        }
+      }
+      .mb_myprize{
+        width: 2.2rem;
+        height: 2.2rem;
+        background-color: khaki;
+        position: fixed;
+        bottom:1rem;
+        right:1rem;
+      }
+      .mb_prize_box{
+        width:70%;
+        height: 15rem;
+        position: absolute;
+        top: 6rem;
+        left:15%;
+        background: url("../images/dwl/img/layerRed.png") no-repeat;
+        background-size: 100% 15rem;
+        display: none;
+        z-index: 100;
+        .mb_rule{
+          width:80%;
+          height: 70%;
+          margin: 1rem auto 1.4rem;
+        }
+        .mb_btn_help{
+          width: 4rem;
+          height: 1.5rem;
+          line-height: 1.5rem;
+          text-align: center;
+          margin: 0 auto;
+          background: url("../images/dwl/img/btnBgBlack.png");
+          background-size: 100% 1.5rem;
+          font-size: 0.7rem;
+          font-weight: 800;
+          font-family: flyer_0_Font_21_TYPE_0_ID_18_RAN_1481790638;
+        }
+      }
+      .mask_share{
+        display: none;
+        width: 100%;
+        height: 100%;
+        opacity: 0.9;
+        position: fixed;
+        top:0;
+        z-index: 80000;
+        background-image: url("../images/share.jpg");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}
