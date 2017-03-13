@@ -2,7 +2,7 @@
  * Created by gaotianyang on 2017/3/9.
  */
 $(function () {
-
+//---------------------页面各种点击显示消失效果--------------------
     //点击开始游戏 蒙板消失
     $(".mb_start_btn").click(function () {
         $(".mask_black").hide();
@@ -16,7 +16,6 @@ $(function () {
         $(".mask_black").show();
         $(".mb_rule_box").show();
     });
-
     //点击蒙板 提示消失
     $(".mask_black").click(function () {
         $(".mb_start").hide();
@@ -24,7 +23,6 @@ $(function () {
         $(".mb_rule_box").hide();
         $(".mb_prize_box").hide();
     });
-
     // 点击显示我的奖品
     $(".mb_myprize").click(function () {
         var help = +$(".help_number_now").text();
@@ -37,7 +35,6 @@ $(function () {
         prizeMaskShow(status,help,gift);
 
     });
-
     //分享助力
     $(".mb_btn_help").click(function(e){
         e.stopPropagation();
@@ -115,7 +112,6 @@ $(function () {
         });
     });
 
-
     //-----------------奖品蒙版初始化-----------------
     (function(){
         var help = +$(".help_number_now").text();
@@ -130,20 +126,20 @@ $(function () {
         prizeMaskShow(status,help,gift);
     })();
 
-
     //手写拖拽
     var params = {
-        currentX: 0,       //鼠标x坐标
-        oldCurrentX: 0,      //之前鼠标X坐标
-        disX: 0,             //坐标差
-        flag: false,       //鼠标状态
-        //currentY: 0,       //鼠标y坐标
-        //disY: 0,             //相对Y坐标
-        //currentBlock: 1,     //当前显示的块
-        number_all: 7,       //小鸡总数
-        number_find: 0,      //找到的小鸡个数
-        posx_arr: posXCreate(),    //小鸡x坐标数组
-        posy_arr: posYCreate(),    //小鸡y坐标数组
+        currentX: 0,                //鼠标x坐标
+        oldCurrentX: 0,             //之前鼠标X坐标
+        disX: 0,                    //坐标差
+        coefficientX: 0,            //坐标差比例系数
+        flag: false,                //鼠标状态
+        //currentY: 0,              //鼠标y坐标
+        //disY: 0,                  //相对Y坐标
+        //currentBlock: 1,          //当前显示的块
+        number_all: 7,              //小鸡总数
+        number_find: 0,             //找到的小鸡个数
+        posx_arr: posXCreate(),     //小鸡x坐标数组
+        posy_arr: posYCreate(),     //小鸡y坐标数组
         phoneDis: function (event) {
             //获取触摸点位置
             var e = event || window.event;
@@ -157,6 +153,7 @@ $(function () {
                 var touch = e.touches[0];
                 params.currentX = parseInt(touch.pageX);
                 params.disX = params.currentX - params.oldCurrentX;
+                params.coefficientX = -params.disX/100;
                 params.oldCurrentX = params.currentX;
             }
         }
@@ -259,13 +256,13 @@ $(function () {
 
     function createFirstPano(imgs, rect) {
         var _len = imgs.length;
-        var _radius = 200;
         var _step = rect.w / _len;
+        var _radius = 200;                              //1
         var _sp = new C3D.Sprite();
 
         for (var i = 0; i < _len; i++) {
             var _p = new C3D.Plane();
-            var _r = 360 / 24 * params.posx_arr[i];
+            var _r = 360 / 24 * params.posx_arr[i];     //2
             var _a = Math.PI * 2 / 24 * params.posx_arr[i];
             var _y = params.posy_arr[i];
             _p.size(_step, rect.h).position(Math.sin(_a) * _radius, _y, -Math.cos(_a) * _radius).rotation(0, -_r, 0).material({
@@ -302,23 +299,23 @@ $(function () {
                     // data返回JSON数组，格式为{code : (int)VALUE, message : (str)VALUE}
                     //例如{code : 200, message : 用户添加成功}
 
-                        var gift = +$(".gift_category").text();
-                        var help = +$(".help_number_now").text();
-                        var status = +$(".gift_status_now").text();
+                    var gift = +$(".gift_category").text();
+                    var help = +$(".help_number_now").text();
+                    var status = +$(".gift_status_now").text();
 
-                        if(data.code == 200){
-                            $(".gift_status_now").text("1");
-                            status = 1;
-                            prizeMaskShow(status,help,gift);
-                        }else if(data.code == 400){
-                            if(gift == 0){
-                                $(".mb_prize_nogift").show();
-                                $(".mb_prize_box .mb_start_btn").show();
-                            }else{
-                                $(".mb_prize_opened").show();
-                                $(".mb_prize_box .mb_start_btn").show();
-                            }
+                    if(data.code == 200){
+                        $(".gift_status_now").text("1");
+                        status = 1;
+                        prizeMaskShow(status,help,gift);
+                    }else if(data.code == 400){
+                        if(gift == 0){
+                            $(".mb_prize_nogift").show();
+                            $(".mb_prize_box .mb_start_btn").show();
+                        }else{
+                            $(".mb_prize_opened").show();
+                            $(".mb_prize_box .mb_start_btn").show();
                         }
+                    }
 
 
                 },
@@ -384,18 +381,18 @@ $(function () {
 
     //刷新场景
     requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame || window.oRequestAnimationFrame ||
-        function (callback) {
-            setTimeout(callback, 1000 / 60);
-        };
+    function (callback) {
+        setTimeout(callback, 1000 / 60);
+    };
 
 
     //------------------向左旋转------------------
     function goLeft() {
 
         rotateDistance -= 1;
-        shopPano.rotate(0, 0.04, 0).updateT();
-        mountainPano.rotate(0, 0.03, 0).updateT();
-        gamePano.rotate(0, 0.02, 0).updateT();
+        shopPano.rotate(0, 0.02+params.coefficientX, 0).updateT();
+        mountainPano.rotate(0, 0.01+params.coefficientX, 0).updateT();
+        gamePano.rotate(0, params.coefficientX, 0).updateT();
         if (rotateDistance > 0) {
             requestAnimationFrame(goLeft);
         }
@@ -406,9 +403,9 @@ $(function () {
     function goRight() {
 
         rotateDistance -= 1;
-        shopPano.rotate(0, -0.04, 0).updateT();
-        mountainPano.rotate(0, -0.03, 0).updateT();
-        gamePano.rotate(0, -0.02, 0).updateT();
+        shopPano.rotate(0, -0.02+params.coefficientX, 0).updateT();
+        mountainPano.rotate(0, -0.01+params.coefficientX, 0).updateT();
+        gamePano.rotate(0, params.coefficientX, 0).updateT();
         if (rotateDistance > 0) {
             requestAnimationFrame(goRight);
         }
@@ -426,10 +423,12 @@ $(function () {
         swipeStatus: function (event, phase, direction, distance, duration, fingerCount, fingerData, currentDirection) {
             rotateDistance = distance;
             if (params.disX < 0) {        //向左滑动页面
-                console.log("goLeft");
+                //console.log("goLeft");
+                console.log(params.coefficientX);
                 requestAnimationFrame(goLeft);
             } else if (params.disX > 0) {      //向右滑动页面
-                console.log("goRight");
+                //console.log("goRight");
+                console.log(params.coefficientX);
                 requestAnimationFrame(goRight);
             }
         },
