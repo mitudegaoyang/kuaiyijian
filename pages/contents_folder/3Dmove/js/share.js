@@ -5,7 +5,7 @@ $(".helpBtn").click(function () {
 
 });
 $(".gameBtn").click(function () {
-
+    self.location='demo.html';
 });
 //礼品盒跳动
 (function time(){
