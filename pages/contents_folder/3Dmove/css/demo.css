@@ -218,6 +218,9 @@ html body #main .tips {
   background-color: #f9d596;
   color: #fff;
 }
+html body #main .tips p {
+  color: #fe6c64;
+}
 html body #main .tips .dianqing_box {
   position: fixed;
   top: 8vh;
