@@ -16,7 +16,6 @@
 html body {
   margin: 0;
   /*弹出框*/
-  /*加载*/
   /*横屏*/
   /*音乐*/
   /*字体*/
@@ -200,20 +199,6 @@ html body #page .rule_gift_item .prize_special {
   left: 2%;
   width: 40%;
   border-radius: 6px;
-}
-html body #progress {
-  position: fixed;
-  z-index: 900;
-  width: 100%;
-  height: 100vh;
-  background: #00aeef;
-}
-html body #progress .progress_img {
-  margin: 20vh auto;
-  width: 100%;
-  height: 100vw;
-  background: url("../images/octopus.gif") no-repeat 0 0;
-  background-size: 100% 100%;
 }
 html body #layer {
   position: fixed;
