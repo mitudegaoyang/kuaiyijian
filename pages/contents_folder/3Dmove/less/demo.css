@@ -2,10 +2,6 @@
 /* +--------------------------------------------------------------------------
 // | Author: Merrier <953075999@qq.com> <http://> <Date:2016/5/11 22:27>
 // +--------------------------------------------------------------------------*/
-/* less Game_library */
-/* +--------------------------------------------------------------------------
-// | Author: Merrier <953075999@qq.com> <http://> <Date:2016/5/11 22:27>
-// +--------------------------------------------------------------------------*/
 @media all and (orientation: landscape) {
   #layer {
     display: block;
@@ -17,59 +13,238 @@
     display: none;
   }
 }
-body {
+html body {
   margin: 0;
+  /*弹出框*/
+  /*音乐*/
+  /*字体*/
+  /*注册页面*/
+  /*转发好友*/
+  /*统计数字提示信息开始*/
 }
-body #layer {
+html body #page {
+  font-size: 0.8rem;
+}
+html body #page .mask_black {
   position: fixed;
-  z-index: 1000;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100vh;
+  opacity: .75;
+  background-color: #000;
+  z-index: 50;
+  display: none;
 }
-body #layer .layer_img {
-  margin: 10vh auto;
-  width: 80vh;
+html body #page .mb_start {
+  position: absolute;
+  width: 86%;
   height: 80vh;
-  background: url("../images/boxbg.jpg") no-repeat 0 0;
+  left: 50%;
+  top: 50%;
+  margin-top: 10%;
+  margin-left: -43%;
+  background-image: url("../images/dwl/img/layerBlue.png");
   background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  z-index: 100;
 }
-.font_yahei {
+html body #page .mb_start_btn {
+  width: 4rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  margin: 0 auto;
+  background: url("../images/dwl/img/btnBgBlack.png");
+  background-size: 100% 1.5rem;
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+html body #page .mb_rule {
+  width: 80%;
+  height: 70%;
+  margin: 1rem auto 1.4rem;
+  padding: 0.5rem;
+  border-radius: 6px;
+  background-color: #fff;
+  overflow-y: auto;
+}
+html body #page .mb_rule .mb_rule_title {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+html body #page .mb_rule .mb_rule_content p {
+  font-size: 0.7rem;
+  line-height: 1rem;
+  padding: 0.5rem 0;
+  overflow-y: auto;
+}
+html body #page .mb_rule .mb_rule_prize_new {
+  font-size: 0.7rem;
+  /*height: calc(84.5%);*/
+  line-height: 1rem;
+  padding: 0.5rem 0;
+  text-align: center;
+}
+html body #page .mb_activity_rule {
+  position: fixed;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 1.5rem;
+  color: #000;
+}
+html body #page .mb_rule_box {
+  display: none;
+  position: absolute;
+  width: 86%;
+  height: 80vh;
+  left: 50%;
+  top: 50%;
+  margin-left: -43%;
+  background-image: url("../images/dwl/img/layerYellow.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  z-index: 100;
+}
+html body #page .mb_myprize {
+  position: fixed;
+  top: 0.5rem;
+  left: 0.5rem;
+  font-size: 1.5rem;
+  color: #000;
+}
+html body #page .mb_prize_box {
+  display: none;
+  position: absolute;
+  width: 80%;
+  height: 20rem;
+  top: 50%;
+  left: 50%;
+  margin-left: -40%;
+  margin-top: 15%;
+  background-image: url("../images/dwl/img/layerRed.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  z-index: 100;
+}
+html body #page .mb_prize_box .mb_rule {
+  width: 80%;
+  height: 70%;
+  margin: 1rem auto 1.4rem;
+}
+html body #page .mb_prize_box .mb_rule img {
+  max-width: 100%;
+}
+html body #page .mb_prize_box .mb_prize_yes {
+  display: none;
+}
+html body #page .mb_prize_box .mb_btn {
+  width: 4rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  margin: 0 auto;
+  background: url("../images/dwl/img/btnBgBlack.png");
+  background-size: 100% 1.5rem;
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+html body #page .mb_prize_box .mb_btn_open,
+html body #page .mb_prize_box .mb_btn_help {
+  display: none;
+}
+html body #page .mask_share {
+  display: none;
+  width: 100%;
+  height: 100%;
+  opacity: 0.9;
+  position: fixed;
+  top: 0;
+  z-index: 80000;
+  background-image: url("../images/share.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+html body #page .rule_gift_item {
+  width: 100%;
+  height: 4.2rem;
+  position: relative;
+}
+html body #page .rule_gift_item .prize_name {
+  font-size: 0.8rem;
+  font-family: "Microsoft YaHei";
+  position: absolute;
+  left: 46%;
+  top: 20%;
+}
+html body #page .rule_gift_item .prize_img {
+  position: absolute;
+  left: 2%;
+  width: 35%;
+  height: 80%;
+  border-radius: 6px;
+}
+html body #page .rule_gift_item .prize_special {
+  height: 40%;
+  top: 30%;
+  position: absolute;
+  left: 2%;
+  width: 40%;
+  border-radius: 6px;
+}
+html body .music_button {
+  position: fixed;
+  top: auto;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  z-index: 2;
+  width: 2rem;
+  height: 2rem;
+}
+html body .music_button .play_button {
+  z-index: 2;
+  animation: rotate 1s linear infinite;
+  -webkit-animation: rotate 1s linear infinite;
+  display: block;
+}
+html body .font_yahei {
   font-family: 'Microsoft Yahei', '微软雅黑';
 }
-.font_arial {
+html body .font_arial {
   font-family: 'Arial';
 }
-.font_sitka {
+html body .font_sitka {
   font-family: 'Sitka';
 }
-.font_hei {
+html body .font_hei {
   font-family: '黑体';
 }
-.center_block {
+html body .center_block {
   margin-left: auto;
   margin-right: auto;
 }
-.content_box {
+html body .content_box {
   box-sizing: content-box;
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
 }
-.clearfix:after {
+html body .clearfix:after {
   content: ".";
   display: block;
   height: 0;
   clear: both;
   visibility: hidden;
 }
-.caret {
+html body .caret {
   border-top-width: 8px;
   border-right-width: 8px;
   border-left-width: 8px;
-}
-html body {
-  /*注册页面*/
-  /*转发好友*/
-  /*统计数字提示信息开始*/
 }
 html body .img_responsive {
   display: inline-block;
@@ -232,10 +407,34 @@ html body .input_num_box {
   position: absolute;
   color: #1c1c1c;
 }
+html body #layer {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 100vh;
+}
+html body #layer .layer_img {
+  margin: 10vh auto;
+  width: 80vh;
+  height: 80vh;
+  background: url("../images/boxbg.jpg") no-repeat 0 0;
+  background-size: 100% 100%;
+}
 html body #main .tips {
   height: 80px;
   background-color: #f9d596;
   color: #fff;
+}
+html body #main .tips .dianqing_box {
+  position: fixed;
+  top: 8vh;
+  left: 50%;
+  z-index: 2;
+}
+html body #main .tips .dianqing_box .dianqing {
+  position: relative;
+  left: -50%;
+  height: 2.5rem;
 }
 html body #main .tips p {
   position: fixed;
@@ -254,144 +453,4 @@ html body #main #mobiPage {
 }
 html body #main .swing {
   animation: swing 1000ms 0ms infinite forwards;
-}
-html body #page {
-  font-size: 0.8rem;
-}
-html body #page .mask_black {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  opacity: .75;
-  background-color: #000;
-  z-index: 50;
-  display: none;
-}
-html body #page .mb_start {
-  position: absolute;
-  width: 86%;
-  height: 80vh;
-  left: 50%;
-  top: 50%;
-  margin-left: -43%;
-  background-image: url("../images/dwl/img/layerBlue.png");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: center center;
-  z-index: 100;
-}
-html body #page .mb_start_btn {
-  width: 4rem;
-  height: 1.5rem;
-  line-height: 1.5rem;
-  text-align: center;
-  margin: 0 auto;
-  background: url("../images/dwl/img/btnBgBlack.png");
-  background-size: 100% 1.5rem;
-  font-size: 0.7rem;
-  font-weight: 800;
-}
-html body #page .mb_rule {
-  width: 80%;
-  height: 70%;
-  margin: 1rem auto 1.4rem;
-  padding: 0.5rem;
-  border-radius: 6px;
-  background-color: #fff;
-}
-html body #page .mb_rule .mb_rule_title {
-  text-align: center;
-  margin-bottom: 0.5rem;
-}
-html body #page .mb_rule .mb_rule_content {
-  font-size: 0.7rem;
-  height: calc(98.5%);
-  line-height: 1rem;
-  overflow-y: auto;
-}
-html body #page .mb_activity_rule {
-  position: fixed;
-  top: 0.5rem;
-  right: 0.5rem;
-  font-size: 1.5rem;
-  color: #000;
-}
-html body #page .mb_rule_box {
-  display: none;
-  position: absolute;
-  width: 86%;
-  height: 80vh;
-  left: 50%;
-  top: 50%;
-  margin-left: -43%;
-  background-image: url("../images/dwl/img/layerYellow.png");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: center center;
-  z-index: 100;
-}
-html body #page .mb_myprize {
-  position: fixed;
-  top: 0.5rem;
-  left: 0.5rem;
-  font-size: 1.5rem;
-  color: #000;
-}
-html body #page .mb_prize_box {
-  display: none;
-  position: absolute;
-  width: 80%;
-  height: 20rem;
-  top: 50%;
-  left: 50%;
-  margin-left: -40%;
-  margin-top: 15%;
-  background-image: url("../images/dwl/img/layerRed.png");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: center center;
-  z-index: 100;
-}
-html body #page .mb_prize_box .mb_rule {
-  width: 80%;
-  height: 70%;
-  margin: 1rem auto 1.4rem;
-}
-html body #page .mb_prize_box .mb_prize_yes {
-  display: none;
-}
-html body #page .mb_prize_box .mb_rule img {
-  max-width: 100%;
-}
-html body #page .mb_prize_box .mb_btn {
-  width: 4rem;
-  height: 1.5rem;
-  line-height: 1.5rem;
-  text-align: center;
-  margin: 0 auto;
-  background: url("../images/dwl/img/btnBgBlack.png");
-  background-size: 100% 1.5rem;
-  font-size: 0.7rem;
-  font-weight: 800;
-}
-html body #page .mb_prize_box .mb_btn_open,
-html body #page .mb_prize_box .mb_btn_help {
-  display: none;
-}
-html body #page .mask_share {
-  display: none;
-  width: 100%;
-  height: 100%;
-  opacity: 0.9;
-  position: fixed;
-  top: 0;
-  z-index: 80000;
-  background-image: url("../images/share.jpg");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
 }

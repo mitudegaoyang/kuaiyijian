@@ -299,23 +299,23 @@ $(function () {
                     // data返回JSON数组，格式为{code : (int)VALUE, message : (str)VALUE}
                     //例如{code : 200, message : 用户添加成功}
 
-                    var gift = +$(".gift_category").text();
-                    var help = +$(".help_number_now").text();
-                    var status = +$(".gift_status_now").text();
+                        var gift = +$(".gift_category").text();
+                        var help = +$(".help_number_now").text();
+                        var status = +$(".gift_status_now").text();
 
-                    if(data.code == 200){
-                        $(".gift_status_now").text("1");
-                        status = 1;
-                        prizeMaskShow(status,help,gift);
-                    }else if(data.code == 400){
-                        if(gift == 0){
-                            $(".mb_prize_nogift").show();
-                            $(".mb_prize_box .mb_start_btn").show();
-                        }else{
-                            $(".mb_prize_opened").show();
-                            $(".mb_prize_box .mb_start_btn").show();
+                        if(data.code == 200){
+                            $(".gift_status_now").text("1");
+                            status = 1;
+                            prizeMaskShow(status,help,gift);
+                        }else if(data.code == 400){
+                            if(gift == 0){
+                                $(".mb_prize_nogift").show();
+                                $(".mb_prize_box .mb_start_btn").show();
+                            }else{
+                                $(".mb_prize_opened").show();
+                                $(".mb_prize_box .mb_start_btn").show();
+                            }
                         }
-                    }
 
 
                 },
@@ -381,9 +381,9 @@ $(function () {
 
     //刷新场景
     requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame || window.oRequestAnimationFrame ||
-    function (callback) {
-        setTimeout(callback, 1000 / 60);
-    };
+        function (callback) {
+            setTimeout(callback, 1000 / 60);
+        };
 
 
     //------------------向左旋转------------------
