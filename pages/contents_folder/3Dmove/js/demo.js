@@ -2,7 +2,11 @@
  * Created by gaotianyang on 2017/3/9.
  */
 $(function () {
-//---------------------页面各种点击显示消失效果--------------------
+    //进度条页面加载完成时消失
+    window.onload=function(){
+        $("#progress").css({display:"none"})
+    };
+    //---------------------页面各种点击显示消失效果--------------------
     //点击开始游戏 蒙板消失
     $(".mb_start_btn").click(function () {
         $(".mask_black").hide();
