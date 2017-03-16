@@ -1,0 +1,92 @@
+/**
+ * Created by gaotianyang(13683265113@163.com) on 2017/3/15.
+ **/
+body {
+  margin: 0;
+  box-sizing: border-box;
+  background: #010101;
+}
+body * {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+body div:after,
+body header:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+body div:before,
+body header:before {
+  content: "";
+  display: table;
+}
+body #calc {
+  position: fixed;
+  bottom: 0;
+}
+body #calc header {
+  width: 100vw;
+  background: #010101;
+}
+body #calc header .textBox {
+  padding: 0 3vw;
+  height: 20vh;
+  text-align: right;
+  color: #e0dfe3;
+}
+body #calc header .textBox .Rtext {
+  width: 100%;
+  height: 8vh;
+  line-height: 8vh;
+  font-size: 3rem;
+  overflow: hidden;
+}
+body #calc header .textBox .Ctext {
+  width: 100%;
+  height: 12vh;
+  line-height: 12vh;
+  font-size: 5rem;
+  overflow: hidden;
+}
+body #calc article {
+  width: 100vw;
+}
+body #calc article ul {
+  margin: 0;
+  padding: 0;
+}
+body #calc article ul li {
+  float: left;
+  list-style-type: none;
+}
+body #calc article ul li .Btn {
+  box-sizing: border-box;
+  border: 1px solid #000;
+  width: 20vw;
+  height: 20vw;
+  line-height: 20vw;
+  text-align: center;
+  font-size: 2rem;
+  background: #d1d2d5;
+}
+body #calc article ul li .Gray_Btn {
+  background: #c5c5c7;
+}
+body #calc article ul li .Orange_Btn {
+  background: #f9850f;
+}
+body #calc article ul li .Res_Btn {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  height: 40vw;
+  line-height: 40vw;
+}
+body #calc article ul li .Zern_Btn {
+  width: 40vw;
+}

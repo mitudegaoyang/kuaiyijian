@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!--Created by gaotianyang(13683265113@163.com) on 2017/3/15.-->
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <title>计算器</title>
+    <link rel="stylesheet" href="css/calc.css"/>
+</head>
+<body>
+<div id="calc">
+    <header>
+        <div class="textBox">
+            <div class="Rtext">R</div>
+            <div class="Ctext" data-value="null">C</div>
+        </div>
+    </header>
+    <article>
+        <div class="btnBox">
+            <ul>
+                <li>
+                    <div class="Btn Gray_Btn" data-value="MC_Btn">MC</div>
+                </li>
+                <li>
+                    <div class="Btn Gray_Btn" data-value="MR_Btn">MR</div>
+                </li>
+                <li>
+                    <div class="Btn Gray_Btn" data-value="MS_Btn">MS</div>
+                </li>
+                <li>
+                    <div class="Btn Gray_Btn" data-value="MAdd_Btn">M+</div>
+                </li>
+                <li>
+                    <div class="Btn Gray_Btn" data-value="MSub_Btn">M-</div>
+                </li>
+                <li>
+                    <div class="Btn Gray_Btn" data-value="Back_Btn">←</div>
+                </li>
+                <li>
+                    <div class="Btn Gray_Btn" data-value="CE_Btn">CE</div>
+                </li>
+                <li>
+                    <div class="Btn Gray_Btn" data-value="C_Btn">C</div>
+                </li>
+                <li>
+                    <div class="Btn Orange_Btn" data-value="Opp_Btn">±</div>
+                </li>
+                <li>
+                    <div class="Btn Orange_Btn" data-value="Sqrt_Btn">√</div>
+                </li>
+                <li>
+                    <div class="Btn" data-value="7">7</div>
+                </li>
+                <li>
+                    <div class="Btn" data-value="8">8</div>
+                </li>
+                <li>
+                    <div class="Btn" data-value="9">9</div>
+                </li>
+                <li>
+                    <div class="Btn Orange_Btn" data-value="Div_Btn">/</div>
+                </li>
+                <li>
+                    <div class="Btn Orange_Btn" data-value="Mod_Btn">%</div>
+                </li>
+                <li>
+                    <div class="Btn" data-value="4">4</div>
+                </li>
+                <li>
+                    <div class="Btn" data-value="5">5</div>
+                </li>
+                <li>
+                    <div class="Btn" data-value="6">6</div>
+                </li>
+                <li>
+                    <div class="Btn Orange_Btn" data-value="Mul_Btn">*</div>
+                </li>
+                <li>
+                    <div class="Btn Orange_Btn" data-value="Rec_Btn">1/x</div>
+                </li>
+                <li>
+                    <div class="Btn" data-value="1">1</div>
+                </li>
+                <li>
+                    <div class="Btn" data-value="2">2</div>
+                </li>
+                <li>
+                    <div class="Btn" data-value="3">3</div>
+                </li>
+                <li>
+                    <div class="Btn Orange_Btn" data-value="Sub_Btn">-</div>
+                </li>
+                <li>
+                    <div class="Btn Orange_Btn Res_Btn" data-value="Res_Btn">=</div>
+                </li>
+                <li>
+                    <div class="Btn Zern_Btn Num_Btn" data-value="0">0</div>
+                </li>
+                <li>
+                    <div class="Btn" data-value="Spot_Btn">.</div>
+                </li>
+                <li>
+                    <div class="Btn Orange_Btn" data-value="Add_Btn">+</div>
+                </li>
+            </ul>
+        </div>
+    </article>
+</div>
+<script src="../../plugin_folder/jquery_v1.11.3/jquery-1.11.3.min.js"></script>
+<script src="js/calc.js"></script>
+</body>
+</html>
