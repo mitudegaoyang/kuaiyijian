@@ -121,7 +121,7 @@ var calc={
                 break;
             //等于
             case "Res_Btn":
-                if($(".Ctext").text()!="C"&&$(".Rtext").text()!="R"){
+                if($(".Ctext").text()!="C"&&$(".Ctext").text()!=""&&$(".Rtext").text()!="R"){
                     if(eval($(".Ctext").text())>=0){
                         $(".Rtext").append($(".Ctext").text());
                     }else{
