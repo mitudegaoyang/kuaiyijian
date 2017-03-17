@@ -1,10 +1,22 @@
 /**
  * Created by gaotianyang(13683265113@163.com) on 2017/3/15.
  **/
+@media all and (orientation: landscape) {
+  #layer {
+    display: block;
+    background: #000000;
+  }
+}
+@media all and (orientation: portrait) {
+  #layer {
+    display: none;
+  }
+}
 body {
   margin: 0;
   box-sizing: border-box;
   background: #010101;
+  /*横屏*/
 }
 body * {
   -webkit-touch-callout: none;
@@ -24,6 +36,19 @@ body div:before,
 body header:before {
   content: "";
   display: table;
+}
+body #layer {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 100vh;
+}
+body #layer .layer_img {
+  margin: 10vh auto;
+  width: 80vh;
+  height: 80vh;
+  background: url("../img/layerbg.jpg") no-repeat 0 0;
+  background-size: 100% 100%;
 }
 body #calc {
   position: fixed;
