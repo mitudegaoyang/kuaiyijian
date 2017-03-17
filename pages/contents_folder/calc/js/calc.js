@@ -7,10 +7,12 @@ var calc={
     R: null ,           //输入
     C: null ,           //结果
     M: null ,           //存储
+    N: null ,           //数字位数
+    S: true ,           //小数点
     init:function(){    //初始化
         /*********************移动端事件绑定开始**************************/
 
-        //阻止默认滑动屏幕
+            //阻止默认滑动屏幕
         document.addEventListener('touchmove',function(event){
             event.preventDefault();
         });
@@ -120,8 +122,16 @@ var calc={
             //等于
             case "Res_Btn":
                 if($(".Ctext").text()!="C"&&$(".Rtext").text()!="R"){
-                    $(".Rtext").append($(".Ctext").text());
+                    if(eval($(".Ctext").text())>=0){
+                        $(".Rtext").append($(".Ctext").text());
+                    }else{
+                        $(".Rtext").append("("+$(".Ctext").text()+")");
+                    }
                     this.C=eval($(".Rtext").text());
+                    this.N=this.C.toString();
+                    if(this.N.length>9){
+                        this.C=this.C.toExponential([1]) ;
+                    }
                     $(".Ctext").text(this.C);
                     $(".Rtext").text("");
                     this.F=true;
@@ -169,7 +179,7 @@ var calc={
                 console.log("other");
         }
     },
-    //数字(0 1 2 3 4 5 6 7 8 9)
+    //数字(0 1 2 3 4 5 6 7 8 9 .)
     numBtn:function(num){
         if($(".Ctext").text().length==9){
             return;
@@ -182,55 +192,70 @@ var calc={
         if($(".Ctext").text()=="0"){
             $(".Ctext").text("");
         }
-        $(".Ctext").append(num);
+        if(num!="."){
+            $(".Ctext").append(num);
+        }else{
+            if(this.S){
+                console.log(num);
+                $(".Ctext").append(num);
+                this.S = false;
+            }
+        }
         this.fontSize();
     },
     //基础运算(+ - * /)
     operatorBtn:function(num){
-        this.fontSize();
-        if($(".Rtext").text()!="R"&&this.F){
+        if($(".Rtext").text()=="R"&&num=="-"){
             $(".Rtext").text("");
-            this.F=false;
-        }
-        if(!this.F&&$(".Ctext").text()!=""){
-            $(".Rtext").append($(".Ctext").text());
             $(".Ctext").text("");
             $(".Rtext").append(num);
+            this.F=false;
+        }else{
+            if($(".Rtext").text()!="R"&&this.F){
+                $(".Rtext").text("");
+                this.F=false;
+            }
+            if(!this.F&&$(".Ctext").text()!=""){
+                if(eval($(".Ctext").text())>=0){
+                    $(".Rtext").append($(".Ctext").text());
+                }else{
+                    $(".Rtext").append("("+$(".Ctext").text()+")");
+                }
+                $(".Ctext").text("");
+                $(".Rtext").append(num);
+            }
         }
+        this.S = true;
+        this.fontSize();
     },
     //其他计算按钮(± √ % 1/x)
     typeidBtn:function(num){
-        this.fontSize();
-        if($(".Rtext").text()!="R"){
-            if($(".Rtext").text()==""){
-                $(".Rtext").append($(".Ctext").text());
-            }else if($(".Rtext").text()!=""&&$(".Ctext").text()!=""){
-                $(".Rtext").text($(".Ctext").text());
-            }
+        if($(".Ctext").text()!="C"&&$(".Ctext").text()!=""){
             switch(num){
                 case "Opp_Btn":     //正负
-                    this.C=-eval($(".Rtext").text());
+                    this.C=-eval($(".Ctext").text());
                     break;
                 case "Sqrt_Btn":    //开根号
-                    if(eval($(".Rtext").text())>=0){
-                        this.C=Math.sqrt(eval($(".Rtext").text()));
+                    if(eval($(".Ctext").text())>=0){
+                        this.C=Math.sqrt(eval($(".Ctext").text()));
                     }else{
                         this.C="错误";
                         this.F=true;
                     }
                     break;
                 case "Mod_Btn":     //百分号
-                    this.C=eval($(".Rtext").text())/100;
+                    this.C=eval($(".Ctext").text())/100;
                     break;
                 case "Rec_Btn":     //取倒数
-                    this.C=1/eval($(".Rtext").text());
+                    this.C=1/eval($(".Ctext").text());
                     break;
                 default:
                     console.log("other");
             }
-            $(".Rtext").text(this.C);
-            $(".Ctext").text("");
-            this.F=true;
+            $(".Ctext").text(this.C);
+            this.fontSize();
+            this.F = false;
+            this.S = true;
         }
     },
     //存储器M
