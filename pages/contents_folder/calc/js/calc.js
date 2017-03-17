@@ -62,62 +62,62 @@ var calc={
         {
             //数字
             case 1:
-                this.numBtn(num);
+                calc.numBtn(num);
                 break;
             case 2:
-                this.numBtn(num);
+                calc.numBtn(num);
                 break;
             case 3:
-                this.numBtn(num);
+                calc.numBtn(num);
                 break;
             case 4:
-                this.numBtn(num);
+                calc.numBtn(num);
                 break;
             case 5:
-                this.numBtn(num);
+                calc.numBtn(num);
                 break;
             case 6:
-                this.numBtn(num);
+                calc.numBtn(num);
                 break;
             case 7:
-                this.numBtn(num);
+                calc.numBtn(num);
                 break;
             case 8:
-                this.numBtn(num);
+                calc.numBtn(num);
                 break;
             case 9:
-                this.numBtn(num);
+                calc.numBtn(num);
                 break;
             case 0:
-                this.numBtn(num);
+                calc.numBtn(num);
                 break;
             case "Spot_Btn":
-                this.numBtn(".");
+                calc.numBtn(".");
                 break;
             //运算符
             case "Add_Btn":     //加法
-                this.operatorBtn("+");
+                calc.operatorBtn("+");
                 break;
             case "Sub_Btn":     //减法
-                this.operatorBtn("-");
+                calc.operatorBtn("-");
                 break;
             case "Mul_Btn":     //乘法
-                this.operatorBtn("*");
+                calc.operatorBtn("*");
                 break;
             case "Div_Btn":     //除法
-                this.operatorBtn("/");
+                calc.operatorBtn("/");
                 break;
             case "Opp_Btn":
-                this.typeidBtn(num);
+                calc.typeidBtn(num);
                 break;
             case "Sqrt_Btn":
-                this.typeidBtn(num);
+                calc.typeidBtn(num);
                 break;
             case "Mod_Btn":
-                this.typeidBtn(num);
+                calc.typeidBtn(num);
                 break;
             case "Rec_Btn":
-                this.typeidBtn(num);
+                calc.typeidBtn(num);
                 break;
             //等于
             case "Res_Btn":
@@ -127,53 +127,53 @@ var calc={
                     }else{
                         $(".Rtext").append("("+$(".Ctext").text()+")");
                     }
-                    this.C=eval($(".Rtext").text());
-                    this.N=this.C.toString();
-                    if(this.N.length>9){
-                        this.C=this.C.toExponential([1]) ;
+                    calc.C=eval($(".Rtext").text());
+                    calc.N=calc.C.toString();
+                    if(calc.N.length>9){
+                        calc.C=calc.C.toExponential([1]) ;
                     }
-                    $(".Ctext").text(this.C);
+                    $(".Ctext").text(calc.C);
                     $(".Rtext").text("");
-                    this.F=true;
+                    calc.F=true;
                 }
-                this.fontSize();
+                calc.fontSize();
                 break;
             //清除
             case "Back_Btn":
                 if($(".Ctext").text()!="C"&&$(".Ctext").text()!=""){
                     $(".Ctext").text($(".Ctext").text().substr(0,$(".Ctext").text().length-1));
                 }
-                this.fontSize();
+                calc.fontSize();
                 break;
             case "CE_Btn":
                 if($(".Ctext").text()!="C"){
                     $(".Ctext").text("0");
                 }
-                this.fontSize();
+                calc.fontSize();
                 break;
             case "C_Btn":
                 if($(".Ctext").text()!="C"||$(".Rtext").text()!="R"){
-                    this.F=true;
+                    calc.F=true;
                     $(".Rtext").text("R");
                     $(".Ctext").text("C");
                 }
-                this.fontSize();
+                calc.fontSize();
                 break;
             //存储器
             case "MC_Btn":      //清除
-                this.storageBtn(num);
+                calc.storageBtn(num);
                 break;
             case "MR_Btn":      //读取
-                this.storageBtn(num);
+                calc.storageBtn(num);
                 break;
             case "MS_Btn":      //存储
-                this.storageBtn(num);
+                calc.storageBtn(num);
                 break;
             case "MAdd_Btn":    //累加
-                this.storageBtn(num);
+                calc.storageBtn(num);
                 break;
             case "MSub_Btn":    //累减
-                this.storageBtn(num);
+                calc.storageBtn(num);
                 break;
             default:
                 console.log("other");
@@ -233,57 +233,57 @@ var calc={
         if($(".Ctext").text()!="C"&&$(".Ctext").text()!=""){
             switch(num){
                 case "Opp_Btn":     //正负
-                    this.C=-eval($(".Ctext").text());
+                    calc.C=-eval($(".Ctext").text());
                     break;
                 case "Sqrt_Btn":    //开根号
                     if(eval($(".Ctext").text())>=0){
-                        this.C=Math.sqrt(eval($(".Ctext").text()));
+                        calc.C=Math.sqrt(eval($(".Ctext").text()));
                     }else{
-                        this.C="错误";
-                        this.F=true;
+                        calc.C="错误";
+                        calc.F=true;
                     }
                     break;
                 case "Mod_Btn":     //百分号
-                    this.C=eval($(".Ctext").text())/100;
+                    calc.C=eval($(".Ctext").text())/100;
                     break;
                 case "Rec_Btn":     //取倒数
-                    this.C=1/eval($(".Ctext").text());
+                    calc.C=1/eval($(".Ctext").text());
                     break;
                 default:
                     console.log("other");
             }
-            $(".Ctext").text(this.C);
-            this.fontSize();
-            this.F = false;
-            this.S = true;
+            $(".Ctext").text(calc.C);
+            calc.fontSize();
+            calc.F = false;
+            calc.S = true;
         }
     },
     //存储器M
     storageBtn:function(num){
-        this.fontSize();
+        calc.fontSize();
         switch(num){
             case "MC_Btn":
-                this.M = null;
+                calc.M = null;
                 break;
             case "MR_Btn":
-                if(this.M!=null){
+                if(calc.M!=null){
                     $(".Rtext").text("");
-                    $(".Ctext").text(this.M);
+                    $(".Ctext").text(calc.M);
                 }
                 break;
             case "MS_Btn":
                 if($(".Ctext").text()!=""&&$(".Ctext").text()!="C"){
-                    this.M = $(".Ctext").text();
+                    calc.M = $(".Ctext").text();
                 }
                 break;
             case "MAdd_Btn":
-                if(this.M!=null) {
-                    $(".Ctext").text(eval($(".Ctext").text() + "+" + this.M));
+                if(calc.M!=null) {
+                    $(".Ctext").text(eval($(".Ctext").text() + "+" + calc.M));
                 }
                 break;
             case "MSub_Btn":
-                if(this.M!=null) {
-                    $(".Ctext").text(eval($(".Ctext").text() + "-" + this.M));
+                if(calc.M!=null) {
+                    $(".Ctext").text(eval($(".Ctext").text() + "-" + calc.M));
                 }
                 break;
         }
