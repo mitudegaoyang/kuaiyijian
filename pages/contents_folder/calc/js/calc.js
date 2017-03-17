@@ -154,6 +154,7 @@ var calc={
             case "C_Btn":
                 if($(".Ctext").text()!="C"||$(".Rtext").text()!="R"){
                     calc.F=true;
+                    calc.S=true;
                     $(".Rtext").text("R");
                     $(".Ctext").text("C");
                 }
