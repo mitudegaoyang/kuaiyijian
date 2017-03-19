@@ -1,0 +1,91 @@
+body{
+    background: url("../img/bg.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    display: flex;
+    -webkit-align-items:center;
+    align-items:center;
+    height:100vh;
+}
+a{
+    text-decoration: none;
+    color: #fafbc3;
+}
+.box{
+    margin: 0 auto;
+    width: 800px;
+}
+.title{
+    margin: 0 auto;
+    width: 40%;
+    text-align: center;
+    font-size: 60px;
+    font-weight: 700;
+    color: #fafbc3;
+    background: rgba(200,200,200,.3);
+    border-radius: 68px;
+}
+.cj{
+    float: left;
+    width: 400px;
+    height: 400px;
+    margin-top: 100px;
+}
+.cj .btn{
+    margin: 20px;
+    width: 300px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    font-size: 3em;
+    color: yellow;
+    background: #e4393c;
+    border: 10px double yellow;
+    border-radius: 20px;
+}
+.cj .btn a{
+    color: yellow;
+}
+.cj .jname,.cj .name,.cj .start,.cj .stop{
+    margin: 20px;
+    width: 300px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    font-size: 3em;
+    color: #fafbc3;
+}
+.cj .name,.cj .start,.cj .stop{
+    color: yellow;
+    background: #e4393c;
+    border: 10px double yellow;
+    border-radius: 20px;
+}
+.cj .name a{
+    color: yellow;
+}
+.cj .start,.cj .stop{
+    cursor: pointer;
+}
+.cj .stop{
+    background: #FC6666;;
+}
+.zjmd{
+    float: left;
+    width: 400px;
+    height: 700px;
+    background: url("../img/luck-bg.png");
+}
+.zjmd .list{
+    margin-top: 100px;
+    padding:0 60px 0 45px;
+}
+.zjmd .list p{
+    margin:9px 0 0;
+    display: inline-block;
+    width: 50%;
+    line-height: 30px;
+    text-align: center;
+    font-size: 26px;
+}

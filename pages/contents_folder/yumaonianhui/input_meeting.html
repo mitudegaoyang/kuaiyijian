@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv='Content-Type' content='ext/html; charset=utf-8' />
+    <title>鱼猫表单录入系统</title>
+    <link rel="stylesheet" href="../../plugin_folder/bootstrap_v3.3.5/css/bootstrap.min.css" />
+    <link rel="shortcut icon" href="img/favicon.ico">
+</head>
+<body>
+<div class="container">
+    <div class="row well">
+        <h2>鱼猫金服参会人员录入系统</h2>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                录入信息: <input type="text" name="uname" id="uname"/>
+                <input type="submit" value="提交" id ="submit-meet"/>
+            </div>
+            <div class='row' style='margin-bottom: 20px; text-align: right;padding-right: 24px;'>
+                <a href="tedengjiang.html" class="btn btn-danger">特等奖抽奖入口</a>
+                <a href="yidengjiang.html" class="btn btn-danger">一等奖抽奖入口</a>
+                <a href="erdengjiang.html" class="btn btn-danger">二等奖抽奖入口</a>
+                <a href="sandengjiang.html" class="btn btn-danger">三等奖抽奖入口</a>
+                <a href="index.html" class="btn btn-danger">年会首页</a>
+            </div>
+        </div>
+        <table class="table table-bordered" >
+            <tr>
+                <td>ID号</td>
+                <td>姓名</td>
+                <td>抽奖信息</td>
+                <td>录入时间</td>
+                <td>奖品领取状态</td>
+            </tr>
+            <tbody id="meeting-list">
+            </tbody>
+        </table>
+        <nav>
+            <ul class="pagination">
+                <li><a href="javascript:removetxt();getInfo(0);">&laquo;</a></li>
+                <li><a href="javascript:removetxt();getInfo(0);">1</a></li>
+                <li><a href="javascript:removetxt();getInfo(40);">2</a></li>
+                <li><a href="javascript:removetxt();getInfo(80);">3</a></li>
+                <li><a href="javascript:removetxt();getInfo(120);">4</a></li>
+                <li><a href="javascript:removetxt();getInfo(140);">5</a></li>
+                <li><a href="javascript:removetxt();getInfo(180);">6</a></li>
+                <li><a href="javascript:removetxt();getInfo(180);">&raquo;</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<script src="../../plugin_folder/jquery_v1.11.3/jquery-1.11.3.min.js"></script>
+<script src="../../plugin_folder/bootstrap_v3.3.5/js/bootstrap.min.js" ></script>
+<script>
+    var checkOk=false;//检测时候符合标准
+    //页面加载完成后执行
+    $(document).ready(function(){
+        getInfo(0);
+        $('#uname').blur(function(){
+            checkInfo();
+        })
+        $('#submit-meet').click(function(){
+
+            if(checkOk){
+                submitInfo();
+            }else{
+
+                alert('该用户信息已录入');
+            }
+        })
+    })
+
+    //获取数据库中的名单
+    function getInfo(a){
+        $.ajax({
+            type:"get",
+            url:"data/get-info.php",
+            data: {start:a},
+            success:function(msg){
+                console.log(msg);
+                for(var i=0 ;i<msg.length;i++){
+                    $('#meeting-list').append("<tr><td>"+msg[i].uid+"</td><td>"+msg[i].uname+"</td><td>"+(msg[i].uprize==9?"特等奖":msg[i].uprize==3?"未抽奖":msg[i].uprize==2?"鱼猫充电宝":msg[i].uprize==1?"鱼猫手机":"红包")+"</td><td>"+new Date(parseInt(msg[i].utime))+"</td><td>"+(msg[i].ulingqu==0?'未领取':'已领取')+"</td></tr>")
+                }
+            }
+        });
+    }
+
+    // 清空list
+    function removetxt(){
+        $('#meeting-list').html('');
+    }
+
+    //提交信息
+    function submitInfo(){
+        var uname = $('#uname').val();
+        $.ajax({
+            type:"post",
+            url:"data/set-info.php",
+            data:{uname:uname},
+            success:function(msg){
+                if(msg[0].msg=='succ'){
+                    alert('信息录入成功；数据库中包含'+msg[0].uid+'条信息');
+                    removetxt();
+                    getInfo();
+                    $('#uname').val('');
+                    checkOk=false;
+                    console.log('禁止录入')
+                }
+            }
+        });
+    }
+
+    //检查是否存在重复的名字
+    function checkInfo(){
+        var checkName = $('#uname').val();
+        $.ajax({
+            type:"get",
+            url:"data/check.php",
+            data:{checkName:checkName},
+            success:function(msg){
+                if(msg.length){
+                    checkOk=true;
+                    console.log('可以录入')
+                }else{
+                    checkOk=false;
+                    console.log('禁止录入')
+                }
+            }
+        });
+    }
+</script>
+</body>
+</html>
