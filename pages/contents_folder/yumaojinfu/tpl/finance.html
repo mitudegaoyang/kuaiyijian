@@ -1,0 +1,66 @@
+
+<div ng-include="'tpl/include/header.html'"></div>
+<div id="finance">
+    <div class="layout hidden-xs">
+        <img src="img/finance/banner_bar.png" alt=""/>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 hidden-xs">
+                <div id="ym-item-list">
+                    <div class="ym-font30">项目列表</div>
+                    <ul class="ym-nav-inline ym-font14">
+                        <li><span>项目周期</span></li>
+                        <li><a ng-click="lodedeadline(0)">不限</a></li>
+                        <li><a ng-click="lodedeadline(1)">1个月</a></li>
+                        <li><a ng-click="lodedeadline(2)">2个月</a></li>
+                        <li><a ng-click="lodedeadline(3)">3个月</a></li>
+                        <li><a ng-click="lodedeadline(4)">4个月</a></li>
+                        <li><a ng-click="lodedeadline(5)">5个月及以上</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <table class="table table-hover ym-center">
+                    <thead>
+                    <tr class="ym-font18">
+                        <th class="ym-x15">年化收益率</th>
+                        <th>项目名称</th>
+                        <th class="ym-x15">期限</th>
+                        <th class="ym-x15">项目规模</th>
+                        <th class="ym-x15">状态</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="ym-font16" ng-repeat="item in itemList">
+                        <td><em class="ym-font18">{{item.yield}} %</em></td>
+                        <td><a href="#">{{item.name}}</a></td>
+                        <td>{{item.deadline}}个月</td>
+                        <td>{{item.scale}}万元</td>
+                        <td><a href="#">{{item.state}}</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-xs-12">
+                <div class="pageDivClass ym-font14">
+                    <span class="ym-font18">第1页/共30页</span>
+                    <a>首页</a>
+                    <a>上一页</a>
+                    <a class="cur">1</a>
+                    <a>2</a>
+                    <a>3</a>
+                    <a>4</a>
+                    <a>5</a>
+                    <a>6</a>
+                    <a>7</a>
+                    <a>下一页</a>
+                    <a>末页</a>
+                    <input class="ym-font14" type="text" value="1"/>
+                    <a>跳转</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-include="'tpl/include/footer.html'"></div>

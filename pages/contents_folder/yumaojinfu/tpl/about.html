@@ -1,0 +1,28 @@
+
+<div ng-include="'tpl/include/header.html'"></div>
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-3">
+                <ul class="ym-font16 ym-center">
+                    <li><a class="cur" ng-click="clickMe(0)" ui-sref="about.introduce">公司介绍</a></li>
+                    <li><a ng-click="clickMe(1)" ui-sref="about.pinpai">鱼猫故事</a></li>
+                    <li><a ng-click="clickMe(2)" ui-sref="about.bangong">办公环境</a></li>
+                    <li><a ng-click="clickMe(3)" ui-sref="about.shiji">大事记</a></li>
+                    <li><a ng-click="clickMe(4)" ui-sref="about.touchus">联系我们</a></li>
+                    <li><a ng-click="clickMe(5)" ui-sref="about.costdesc">资费说明</a></li>
+                    <li class="hidden"><a ng-click="clickMe(6)" ui-sref="about.mediaReport">媒体报道</a></li>
+                    <li><a ng-click="clickMe(7)" ui-sref="about.invite">招贤纳士</a></li>
+                    <li><a ng-click="clickMe(8)" ui-sref="about.teamwork">合作伙伴</a></li>
+                    <li><a ng-click="clickMe(9)" ui-sref="about.law">法律法规</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-9">
+                <div id="shoucontent">
+                    <div ui-view></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-include="'tpl/include/footer.html'"></div>

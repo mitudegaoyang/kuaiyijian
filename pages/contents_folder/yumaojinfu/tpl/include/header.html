@@ -1,0 +1,56 @@
+
+<header ng-controller="headerCtrl">
+    <div class="ym-header hidden-xs hidden-sm">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-3">
+                    <span class="glyphicon glyphicon-earphone"></span>
+                    <a href="#">客服热线：400-887-4777</a>
+                </div>
+                <div class="col-xs-9">
+                    <div class="row">
+                        <div class="col-xs-2 col-xs-push-2">
+                            <span class="glyphicon glyphicon-lock"></span>
+                            <a ui-sref="home">立即登录</a>
+                        </div>
+                        <div class="col-xs-2 col-xs-push-2">
+                            <span class="glyphicon glyphicon-edit"></span>
+                            <a href="#">快速注册</a>
+                        </div>
+                        <div class="col-xs-2 col-xs-push-2">
+                            <span class="glyphicon glyphicon-book"></span>
+                            <a href="#">帮助中心</a>
+                        </div>
+                        <div class="col-xs-2 col-xs-push-2">
+                            <span class="glyphicon glyphicon-headphones"></span>
+                            <a href="#">客服专区</a>
+                        </div>
+                        <div class="col-xs-2 col-xs-push-2">
+                            <span class="glyphicon glyphicon-phone"></span>
+                            <a href="#">微信端口</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-5 ym-logo">
+                <a href="#">
+                    <img src="img/logo2016031701.png" alt=""/>
+                </a>
+            </div>
+            <div class="hidden-xs col-sm-10 col-sm-push-2 col-md-7 col-md-push-0 ym-menu ym-center ym-meddle">
+                <div id="ym-banner-box" class="animated">
+                        <a ng-mouseover="banner(0)" ng-mouseleave="bannerbar()" ng-mousedown="removebar()" ng-click="removetitele(0)" ui-sref="start">首页</a>
+                        <a ng-mouseover="banner(1)" ng-mouseleave="bannerbar()" ng-mousedown="removebar()" ng-click="removetitele(1)" ui-sref="finance">我要投资</a>
+                        <a ng-mouseover="banner(2)" ng-mouseleave="bannerbar()" ng-mousedown="removebar()" ng-click="removetitele(2)" ui-sref="home">个人中心</a>
+                        <a ng-mouseover="banner(3)" ng-mouseleave="bannerbar()" ng-mousedown="removebar()" ng-click="removetitele(3)" ui-sref="center">安全保障</a>
+                        <a ng-mouseover="banner(4)" ng-mouseleave="bannerbar()" ng-mousedown="removebar()" ng-click="removetitele(4)" ui-sref="about.introduce">关于我们</a>
+                        <div class="ym-banner-bar fade"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
