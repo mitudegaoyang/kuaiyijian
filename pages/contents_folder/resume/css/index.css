@@ -112,9 +112,10 @@ div:before{
   border-radius: 6px;
   background: url("../img/project2.png") no-repeat 50% 50%;
 }
-#main .my-ww{
+#main .my-calc{
   border-radius: 6px;
   background: url("../img/project3.png") no-repeat 50% 50%;
+  background-size: auto 100%;
 }
 #contact .list-group-item{
   overflow: hidden;
