@@ -73,3 +73,7 @@ body footer .footer-top {
   height: 50px;
   line-height: 50px;
 }
+body footer .footer-bottom {
+  height: 30px;
+  line-height: 30px;
+}
