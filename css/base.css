@@ -51,3 +51,12 @@ table {
 p {
   word-wrap: break-word;
 }
+.font1r {
+  font-size: 1rem;
+}
+.font2r {
+  font-size: 2rem;
+}
+.font3r {
+  font-size: 3rem;
+}

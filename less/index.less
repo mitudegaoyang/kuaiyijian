@@ -1,50 +1,87 @@
-header{
-  background-color: #333;
-  color: #fff;
-}
-nav{
-  .blog_banner_box{
-    position: relative;
-    img{
-      width: 100%;
+body{
+  @color_white:#f9f9f9;
+  @color_black:#333;
+  @color_green:#009b76;
+  a:hover{
+    text-decoration: none;
+  }
+  header{
+    .header-title{
+      background-color: @color_white;
+      color: @color_black;
+      .my-logo{
+        height: 44px;
+        line-height: 44px;
+      }
     }
-    .blog_banner_left{
-      position: absolute;
-      left: 0;
-      top: 50%;
+    .header-body{
+      background-color: @color_green;
+      .navbar-btn{
+        text-align: center;
+        a{
+          color: @color_white;
+        }
+        a:hover{
+          color: darken(@color_white,10%);
+        }
+      }
     }
-    .blog_banner_right{
-      position: absolute;
-      right: 0;
-      top: 50%;
-    }
-    .blog_banner_btn{
-      position: absolute;
-      left: 50%;
-      bottom: 10px;
-      ul{
-        position: relative;
-        left: -50%;
-        bottom: 0;
-        li{
-          float: left;
-          margin: 0 10px;
-          b{
-            display: inline-block;
-            width: 35px;
-            height: 35px;
-            border: 1px solid #ddd;
-            border-radius: 50%;
-            text-align: center;
-            background: #f0f0f0;
+  }
+  nav{
+    .blog_banner_box{
+      position: relative;
+      img{
+        width: 100%;
+      }
+      .blog_banner_left{
+        position: absolute;
+        left: 0;
+        top: 50%;
+      }
+      .blog_banner_right{
+        position: absolute;
+        right: 0;
+        top: 50%;
+      }
+      .blog_banner_btn{
+        position: absolute;
+        left: 50%;
+        bottom: 10px;
+        ul{
+          position: relative;
+          left: -50%;
+          bottom: 0;
+          li{
+            float: left;
+            margin: 0 10px;
+            b{
+              display: inline-block;
+              width: 35px;
+              height: 35px;
+              border: 1px solid #ddd;
+              border-radius: 50%;
+              text-align: center;
+              background: @color_white;
+            }
           }
         }
       }
     }
   }
-}
-footer{
-  background-color: #333;
-  color: #fff;
-  text-align: center;
+  section{
+    margin: 50px 0;
+  }
+  footer{
+    .footer-top{
+      background: @color_green;
+      height: 50px;
+      line-height: 50px;
+    }
+    background-color: @color_black;
+    color: @color_white;
+    text-align: center;
+    .footer-bottom{
+
+    }
+  }
 }

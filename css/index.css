@@ -1,48 +1,75 @@
-header {
-  background-color: #333;
-  color: #fff;
+body a:hover {
+  text-decoration: none;
 }
-nav .blog_banner_box {
+body header .header-title {
+  background-color: #f9f9f9;
+  color: #333;
+}
+body header .header-title .my-logo {
+  height: 44px;
+  line-height: 44px;
+}
+body header .header-body {
+  background-color: #009b76;
+}
+body header .header-body .navbar-btn {
+  text-align: center;
+}
+body header .header-body .navbar-btn a {
+  color: #f9f9f9;
+}
+body header .header-body .navbar-btn a:hover {
+  color: #e0e0e0;
+}
+body nav .blog_banner_box {
   position: relative;
 }
-nav .blog_banner_box img {
+body nav .blog_banner_box img {
   width: 100%;
 }
-nav .blog_banner_box .blog_banner_left {
+body nav .blog_banner_box .blog_banner_left {
   position: absolute;
   left: 0;
   top: 50%;
 }
-nav .blog_banner_box .blog_banner_right {
+body nav .blog_banner_box .blog_banner_right {
   position: absolute;
   right: 0;
   top: 50%;
 }
-nav .blog_banner_box .blog_banner_btn {
+body nav .blog_banner_box .blog_banner_btn {
   position: absolute;
   left: 50%;
   bottom: 10px;
 }
-nav .blog_banner_box .blog_banner_btn ul {
+body nav .blog_banner_box .blog_banner_btn ul {
   position: relative;
   left: -50%;
   bottom: 0;
 }
-nav .blog_banner_box .blog_banner_btn ul li {
+body nav .blog_banner_box .blog_banner_btn ul li {
   float: left;
   margin: 0 10px;
 }
-nav .blog_banner_box .blog_banner_btn ul li b {
+body nav .blog_banner_box .blog_banner_btn ul li b {
   display: inline-block;
   width: 35px;
   height: 35px;
   border: 1px solid #ddd;
   border-radius: 50%;
   text-align: center;
-  background: #f0f0f0;
+  background: #f9f9f9;
 }
-footer {
+body section {
+  margin: 50px 0;
+}
+body footer {
   background-color: #333;
-  color: #fff;
+  color: #f9f9f9;
   text-align: center;
+}
+body footer .footer-top {
+  background: #009b76;
+  height: 50px;
+  line-height: 50px;
 }
