@@ -2,6 +2,7 @@ body{
   @color_white:#f9f9f9;
   @color_black:#333;
   @color_green:#009b76;
+  @color_purple:#53284f;
   a:hover{
     text-decoration: none;
   }
@@ -28,6 +29,8 @@ body{
     }
   }
   nav{
+    padding: 20px 0;
+    background: @color_purple;
     .blog_banner_box{
       position: relative;
       img{
@@ -72,17 +75,55 @@ body{
     margin: 50px 0;
   }
   footer{
+    text-align: center;
     .footer-top{
-      background: @color_green;
       height: 50px;
       line-height: 50px;
+      background: @color_green;
+      .ico-box{
+        margin: 0 auto;
+        width: 200px;
+        .ico{
+          margin: 1px 6.5px;
+          float: left;
+          width: 48px;
+          height: 48px;
+          line-height: 40px;
+        }
+        .ico-wx{
+          background: url("../img/icon.png") no-repeat -346px -135px;
+        }
+        .ico-wx:hover{
+          background: url("../img/icon.png") no-repeat -346px -418px;
+        }
+        .ico-wb{
+          background: url("../img/icon.png") no-repeat -137px -135px;
+        }
+        .ico-wb:hover{
+          background: url("../img/icon.png") no-repeat -137px -418px;
+        }
+        .ico-qq{
+          background: url("../img/icon.png") no-repeat -277px -135px;
+        }
+        .ico-qq:hover{
+          background: url("../img/icon.png") no-repeat -277px -417px;
+        }
+      }
     }
-    background-color: @color_black;
-    color: @color_white;
-    text-align: center;
+    .footer-main{
+      background: @color_purple;
+      a{
+        color: @color_white;
+      }
+      a:hover{
+        color: darken(@color_white,10%);
+      }
+    }
     .footer-bottom{
       height: 30px;
       line-height: 30px;
+      background-color: @color_black;
+      color: @color_white;
     }
   }
 }

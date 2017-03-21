@@ -21,6 +21,10 @@ body header .header-body .navbar-btn a {
 body header .header-body .navbar-btn a:hover {
   color: #e0e0e0;
 }
+body nav {
+  padding: 20px 0;
+  background: #53284f;
+}
 body nav .blog_banner_box {
   position: relative;
 }
@@ -64,16 +68,54 @@ body section {
   margin: 50px 0;
 }
 body footer {
-  background-color: #333;
-  color: #f9f9f9;
   text-align: center;
 }
 body footer .footer-top {
-  background: #009b76;
   height: 50px;
   line-height: 50px;
+  background: #009b76;
+}
+body footer .footer-top .ico-box {
+  margin: 0 auto;
+  width: 200px;
+}
+body footer .footer-top .ico-box .ico {
+  margin: 1px 6.5px;
+  float: left;
+  width: 48px;
+  height: 48px;
+  line-height: 40px;
+}
+body footer .footer-top .ico-box .ico-wx {
+  background: url("../img/icon.png") no-repeat -346px -135px;
+}
+body footer .footer-top .ico-box .ico-wx:hover {
+  background: url("../img/icon.png") no-repeat -346px -418px;
+}
+body footer .footer-top .ico-box .ico-wb {
+  background: url("../img/icon.png") no-repeat -137px -135px;
+}
+body footer .footer-top .ico-box .ico-wb:hover {
+  background: url("../img/icon.png") no-repeat -137px -418px;
+}
+body footer .footer-top .ico-box .ico-qq {
+  background: url("../img/icon.png") no-repeat -277px -135px;
+}
+body footer .footer-top .ico-box .ico-qq:hover {
+  background: url("../img/icon.png") no-repeat -277px -417px;
+}
+body footer .footer-main {
+  background: #53284f;
+}
+body footer .footer-main a {
+  color: #f9f9f9;
+}
+body footer .footer-main a:hover {
+  color: #e0e0e0;
 }
 body footer .footer-bottom {
   height: 30px;
   line-height: 30px;
+  background-color: #333;
+  color: #f9f9f9;
 }
