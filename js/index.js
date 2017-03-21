@@ -14,10 +14,11 @@ var myProject=[
 (function(){
         $(".my-article .row").html("");
         for(var i=0;i<myArticle.length;i++){
+            var img=(myArticle[i].img=="")?"":"<img src=`+myArticle[i].img+` alt=‘...’>";
             $(".my-article .row").append(`
                 <div class="col-xs-12">
                     <div class="thumbnail">
-                        <img src=`+myArticle[i].img+` alt="...">
+                        `+img+`
                         <div class="caption">
                             <h3>`+myArticle[i].title+`</h3>
                             <p>`+myArticle[i].text+`</p>
