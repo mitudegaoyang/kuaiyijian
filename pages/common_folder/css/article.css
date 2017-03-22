@@ -24,6 +24,9 @@ body header a {
 }
 body header .art_title {
   float: left;
+  width: 42vw;
+  height: 50px;
+  overflow: hidden;
   font-weight: 700;
   font-size: 2rem;
 }
