@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--Created by gaotianyang(13683265113@163.com) on 2017/3/22.-->
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>移动端页面通过前端方法禁止ios页面横屏方法</title>
+    <link rel="stylesheet" href="../../common_folder/css/article.css"/>
+    <link rel="shortcut icon" href="../../../blog.ico"/>
+</head>
+<body>
+<header>
+    <div class="art_title">移动端页面通过前端方法禁止ios页面横屏方法</div>
+    <div class="art_list"><a href="artList.html">回到列表</a></div>
+    <div class="art_home"><a href="../../../index.html">回到首页</a></div>
+</header>
+<main>
+    <div class="art_main">
+        <h2>通过css媒体查询来判断，当横屏时，弹出相应提示。</h2>
+        <xmp>@media all and (orientation : landscape) {
+    /*横屏时代码*/
+}
+
+@media all and (orientation : portrait){
+    /*竖屏时代码*/
+}
+
+##浏览器自带属性 <!-- UC强制竖屏 -->
+<meta name="screen-orientation" content="portrait">
+
+<!-- QQ强制竖屏 -->
+<meta name="x5-orientation" content="portrait">
+
+<!-- UC强制全屏 -->
+<meta name="full-screen" content="yes">
+
+<!-- QQ强制全屏 -->
+<meta name="x5-fullscreen" content="true">
+
+<!-- UC应用模式 -->
+<meta name="browsermode" content="application">
+
+<!-- QQ应用模式 -->
+<meta name="x5-page-mode" content="app">
+
+<!-- windows phone 点击无高光 -->
+<meta name="msapplication-tap-highlight" content="no">
+
+<!-- 适应移动端 END --></xmp>
+    </div>
+</main>
+<footer>©2016-2017 快易简 | 快捷·容易·简单</footer>
+</body>
+</html>
