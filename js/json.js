@@ -5,7 +5,6 @@ var myArticle=[
     { "url":"pages/contents_folder/article/art_2017_3_6_repositories.html" , "img":"" , "title":"Git 使用技巧 01 删除repositories" , "text":"文章简介" },
     { "url":"pages/contents_folder/article/art_2017_3_16_cssLoading.html" , "img":"" , "title":"CSS解决loading效果" , "text":"文章简介" },
     { "url":"pages/contents_folder/article/demo01.html" , "img":"" , "title":"demo02" , "text":"文章简介" }];
-
 var myProject=[
     { "url":"pages/contents_folder/resume/index.html" , "img":"img/images/mypic1.jpg" , "title":"电子简历" , "text":"项目简介" },
     { "url":"pages/contents_folder/3Dmove/share.html" , "img":"img/images/mypic2.jpg" , "title":"店庆抓小鸡" , "text":"项目简介" },
