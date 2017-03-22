@@ -4,7 +4,7 @@
 //动态加载文章内容
 (function(){
     $(".my-article .row").html("");
-    myArticle.length=(myArticle.length>10)?10:myArticle.length;
+    myArticle.length=(myArticle.length>7)?7:myArticle.length;
         for(var i=0;i<myArticle.length;i++){
             var img=(myArticle[i].img=="")?"":"<img src=`+myArticle[i].img+` alt=‘...’>";
             $(".my-article .row").append(`
