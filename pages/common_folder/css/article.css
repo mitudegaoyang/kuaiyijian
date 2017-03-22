@@ -1,0 +1,59 @@
+/**
+ * Created by gaotianyang(13683265113@163.com) on 2017/3/22.
+ **/
+body {
+  margin: 0;
+  min-width: 560px;
+  background: url("../../contents_folder/article/img/articlebg.jpg") no-repeat 0 0;
+  background-size: 100% 100%;
+}
+body a {
+  text-decoration: none;
+}
+body header {
+  margin: 10px 10vw 30px;
+  padding: 0 30px;
+  height: 50px;
+  line-height: 50px;
+  background: rgba(122, 122, 122, 0.6);
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+body header a {
+  color: #333;
+}
+body header .art_title {
+  float: left;
+  font-weight: 700;
+  font-size: 2rem;
+}
+body header .art_home {
+  float: right;
+  margin: 0 10px;
+}
+body header .art_list {
+  float: right;
+}
+body main {
+  margin: 10px 10vw;
+  padding: 30px 10vw;
+  background: rgba(122, 122, 122, 0.3);
+  min-height: 549px;
+}
+body main .art_img {
+  height: 500px;
+}
+body main a {
+  color: #333;
+}
+body main a:hover {
+  color: #1a1a1a;
+  text-decoration: underline;
+}
+body footer {
+  margin: 30px 10vw 10px;
+  padding: 5px 10px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  background: rgba(122, 122, 122, 0.6);
+}
