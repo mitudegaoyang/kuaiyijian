@@ -1,3 +1,71 @@
 /**
  * Created by gaotianyang(13683265113@163.com) on 2017/3/23.
  **/
+body{
+  margin: 0;
+  #stage{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: url("../img/bg-chicken.png") no-repeat 0 0;
+    background-size: 100% 100%;
+    overflow: hidden;
+    .chicken-gift{
+      position: absolute;
+      bottom: 22vh;
+      width: 100vw;
+    }
+    .chicken-box{
+      position: absolute;
+      left: 25vw;
+      bottom: 25vh;
+      width: 50vw;
+      height: 35vh;
+      transform-origin: center bottom;
+      transform: rotate(0deg);
+      .chicken{
+        position: absolute;
+        bottom: 0;
+        width: 50vw;
+        z-index: 100;
+      }
+      .wingLeft{
+        position: absolute;
+        width: 20vw;
+        bottom: 7vh;
+        left: 1vh;
+        z-index: 50;
+      }
+      .wingRight{
+        position: absolute;
+        width: 20vw;
+        bottom: 7vh;
+        right: 1vh;
+        z-index: 50;
+      }
+      .normalEyes{
+        position: absolute;
+        bottom: 19vh;
+        left: 2vw;
+        width: 46vw;
+        z-index: 200;
+      }
+      .dizzyLeftEye{
+        display: none;
+        position: absolute;
+        bottom: 19vh;
+        left: 19vw;
+        width: 4vw;
+        z-index: 200;
+      }
+      .dizzyRightEye{
+        display: none;
+        position: absolute;
+        bottom: 19vh;
+        right: 19vw;
+        width: 4vw;
+        z-index: 200;
+      }
+    }
+  }
+}
