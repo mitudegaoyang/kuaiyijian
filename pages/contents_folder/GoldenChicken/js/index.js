@@ -41,10 +41,6 @@ var game={
                 game.scoreTime++;
                 console.info(game.timer);
                 $('.game-progress-time p span').text(game.scoreTime);
-            }else{
-                console.log("计时结束");
-                $('.game-logo').text('计时结束!');
-                clearInterval(game.timer);
             }
         },1000);
     },
@@ -100,7 +96,7 @@ var game={
     //小鸡移动
     move:function(){
         if(game.listenGo){
-            $('.game-logo').text(game.coe);
+            $('.game-logo').text("coe:"+game.coe);
             this.deg += 0.5 + game.coe;
             if(this.deg >= 90 || this.deg <= -90){
                 $('.dizzyLeftEye').css({display:"block"});
@@ -109,6 +105,7 @@ var game={
                 game.coe = 0;
                 game.deg = 0;
                 game.listenGo = false;
+                clearInterval(game.timer);
             }
         }
     }
