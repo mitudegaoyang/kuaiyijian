@@ -88,16 +88,18 @@ var game={
                 //console.log('beta: ' + e.beta);
                 //console.log('gamma: ' + e.gamma);
                 //game.coe = Math.floor(e.gamma * 10)/100;
-                game.coe = Math.floor(e.gamma * game.scoreTime * 10)/100;
+                 game.coe = Math.floor(e.gamma * game.scoreTime * 10)/100;
                 game.move();
+                $('.game-logo').html("e.alpha:"+e.alpha+`<br />`+"e.beta:"+e.beta+`<br />`+"e.gamma:"+e.gamma+`<br />`+"deg:"+game.deg);
+
             });
         }
     },
     //小鸡移动
     move:function(){
         if(game.listenGo){
-            $('.game-logo').text("coe:"+game.coe);
-            this.deg += 0.5 + game.coe;
+            //$('.game-logo').text("coe:"+game.coe);
+            this.deg += game.coe;
             if(this.deg >= 90 || this.deg <= -90){
                 $('.dizzyLeftEye').css({display:"block"});
                 $('.dizzyRightEye').css({display:"block"});
