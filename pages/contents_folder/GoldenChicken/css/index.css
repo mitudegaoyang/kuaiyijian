@@ -12,7 +12,7 @@ body #stage {
   background-size: 100% 100%;
   overflow: hidden;
 }
-body #stage .logo {
+body #stage .game-logo {
   margin: 20vh auto 0;
   width: 40vw;
   font-size: 3rem;
@@ -74,4 +74,13 @@ body #stage .chicken-box .dizzyRightEye {
   right: 19vw;
   width: 4vw;
   z-index: 200;
+}
+body #stage .game-progress-time {
+  margin: 53vh auto 0;
+  width: 40vw;
+  font-size: 3rem;
+  text-align: center;
+}
+body #stage .game-progress-time p {
+  display: none;
 }
