@@ -12,6 +12,12 @@ body #stage {
   background-size: 100% 100%;
   overflow: hidden;
 }
+body #stage .logo {
+  margin: 20vh auto 0;
+  width: 40vw;
+  font-size: 3rem;
+  text-align: center;
+}
 body #stage .chicken-gift {
   position: absolute;
   bottom: 22vh;
