@@ -29,11 +29,12 @@ var game={
     },
     start:function(){
         console.log("start");
-        $('.chicken-gift').css({display:"none"});
-        $('.dizzyLeftEye').css({display:"none"});
+        $('.chicken-gift').hide();
+        $('.dizzyLeftEye').hide();
         $('.dizzyRightEye').css({display:"none"});
         $('.startBtn').css({display:"none"});
         $('.againBtn').css({display:"none"});
+        $('.infopop').css({display:"none"});
         $('.game-progress-time p').css({display:"block"});
         $('.game-progress-time p span').text("0");
         this.waggleGo = false;
@@ -45,7 +46,6 @@ var game={
         game.timer = setInterval(function(){
             if(game.listenGo){
                 game.scoreTime++;
-                //console.info(game.timer);
                 $('.game-progress-time p span').text(game.scoreTime);
             }
         },1000);
@@ -86,7 +86,7 @@ var game={
             }
         }
     },
-    //小鸡眩晕眼睛
+    //小鸡眩晕眼睛旋转
     dizzyEye:function(deg){
         game.dizzydeg+=5;
         if(game.dizzydeg>360){
@@ -103,7 +103,7 @@ var game={
                 //console.log('alpha: ' + e.alpha);
                 //console.log('beta: ' + e.beta);
                 //console.log('gamma: ' + e.gamma);
-                game.coe = Math.floor(e.gamma * game.scoreTime * 5)/100;
+                game.coe = Math.floor(e.gamma * (game.scoreTime + 10) * 5)/100;
                 game.move();
             });
         }
@@ -117,6 +117,7 @@ var game={
                 $('.dizzyLeftEye').css({display:"block"});
                 $('.dizzyRightEye').css({display:"block"});
                 $('.againBtn').css({display:"block"});
+                $('.infopop').css({display:"block"});
                 //$('.game-logo').text('游戏结束!');
                 game.coe = 0;
                 game.deg = 0;

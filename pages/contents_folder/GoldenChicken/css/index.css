@@ -12,6 +12,9 @@ body #stage {
   background-size: 100% 100%;
   overflow: hidden;
 }
+body #stage .btn {
+  font-size: 3rem;
+}
 body #stage .game-logo {
   margin: 20vh auto 0;
   width: 40vw;
@@ -90,13 +93,40 @@ body #stage .infoBox .game-progress-time p {
 body #stage .infoBox .startBtn {
   margin: 0 auto;
   width: 40vw;
-  font-size: 3rem;
   text-align: center;
 }
 body #stage .infoBox .againBtn {
   display: none;
   margin: 0 auto;
   width: 40vw;
-  font-size: 3rem;
   text-align: center;
+}
+body #stage .liveBtn {
+  position: fixed;
+  left: 5vw;
+  bottom: 10vh;
+  width: 45vw;
+}
+body #stage .ruleBtn {
+  position: fixed;
+  left: 5vw;
+  top: 5vh;
+}
+body #stage .musicBtn {
+  position: fixed;
+  right: 5vw;
+  top: 5vh;
+}
+body #stage .infopop {
+  display: none;
+  box-sizing: border-box;
+  position: fixed;
+  top: 16vh;
+  left: 10vw;
+  width: 80vw;
+  height: 60vh;
+  padding: 3vh 5vw;
+  background: url("../img/layerRed.png") no-repeat 0 0;
+  background-size: 100% 100%;
+  font-size: 3rem;
 }
