@@ -4,6 +4,7 @@
 var game={
     run: true,          //游戏是否开始
     deg: 0,             //小鸡角度
+    dizzydeg: 0,        //眩晕眼睛角度
     coe: 0,             //系数
     scoreTime: 0,        //坚持秒数
     listenGo: false,     //是否监听
@@ -19,7 +20,10 @@ var game={
         $('.dizzyRightEye').css({display:"none"});
         $('.chicken-box').css({transform:"rotate(0deg)"});
         game.time(16);
-        $('#stage').click(function(){
+        $('.startBtn').click(function(){
+            game.start();
+        });
+        $('.againBtn').click(function(){
             game.start();
         });
     },
@@ -28,6 +32,8 @@ var game={
         $('.chicken-gift').css({display:"none"});
         $('.dizzyLeftEye').css({display:"none"});
         $('.dizzyRightEye').css({display:"none"});
+        $('.startBtn').css({display:"none"});
+        $('.againBtn').css({display:"none"});
         $('.game-progress-time p').css({display:"block"});
         $('.game-progress-time p span').text("0");
         this.waggleGo = false;
@@ -39,7 +45,7 @@ var game={
         game.timer = setInterval(function(){
             if(game.listenGo){
                 game.scoreTime++;
-                console.info(game.timer);
+                //console.info(game.timer);
                 $('.game-progress-time p span').text(game.scoreTime);
             }
         },1000);
@@ -52,6 +58,7 @@ var game={
                 if(game.run){
                     game.waggle(game.waggleMin,game.waggleMax);
                     game.rotate(game.deg);
+                    game.dizzyEye(game.dizzydeg);
                     T();
                 }else{
                     console.log("停止旋转");
@@ -79,6 +86,15 @@ var game={
             }
         }
     },
+    //小鸡眩晕眼睛
+    dizzyEye:function(deg){
+        game.dizzydeg+=5;
+        if(game.dizzydeg>360){
+            game.dizzydeg = 0;
+        }
+        $('.dizzyLeftEye').css({transform:"rotate("+deg+"deg)"});
+        $('.dizzyRightEye').css({transform:"rotate("+deg+"deg)"});
+    },
     //监听手机旋转
     listen:function(){
         if(game.listenGo){
@@ -87,11 +103,8 @@ var game={
                 //console.log('alpha: ' + e.alpha);
                 //console.log('beta: ' + e.beta);
                 //console.log('gamma: ' + e.gamma);
-                //game.coe = Math.floor(e.gamma * 10)/100;
-                 game.coe = Math.floor(e.gamma * game.scoreTime * 10)/100;
+                game.coe = Math.floor(e.gamma * game.scoreTime * 5)/100;
                 game.move();
-                $('.game-logo').html("e.alpha:"+e.alpha+`<br />`+"e.beta:"+e.beta+`<br />`+"e.gamma:"+e.gamma+`<br />`+"deg:"+game.deg);
-
             });
         }
     },
@@ -103,7 +116,8 @@ var game={
             if(this.deg >= 90 || this.deg <= -90){
                 $('.dizzyLeftEye').css({display:"block"});
                 $('.dizzyRightEye').css({display:"block"});
-                $('.game-logo').text('游戏结束!');
+                $('.againBtn').css({display:"block"});
+                //$('.game-logo').text('游戏结束!');
                 game.coe = 0;
                 game.deg = 0;
                 game.listenGo = false;

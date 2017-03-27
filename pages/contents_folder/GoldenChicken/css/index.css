@@ -24,9 +24,9 @@ body #stage .chicken-gift {
   width: 100vw;
 }
 body #stage .chicken-box {
-  position: absolute;
+  position: relative;
   left: 25vw;
-  bottom: 25vh;
+  top: 16vh;
   width: 50vw;
   height: 35vh;
   transform-origin: center bottom;
@@ -54,7 +54,7 @@ body #stage .chicken-box .wingRight {
 }
 body #stage .chicken-box .normalEyes {
   position: absolute;
-  bottom: 19vh;
+  top: 36%;
   left: 2vw;
   width: 46vw;
   z-index: 200;
@@ -62,7 +62,7 @@ body #stage .chicken-box .normalEyes {
 body #stage .chicken-box .dizzyLeftEye {
   display: none;
   position: absolute;
-  bottom: 19vh;
+  top: 36%;
   left: 19vw;
   width: 4vw;
   z-index: 200;
@@ -70,17 +70,33 @@ body #stage .chicken-box .dizzyLeftEye {
 body #stage .chicken-box .dizzyRightEye {
   display: none;
   position: absolute;
-  bottom: 19vh;
+  top: 36%;
   right: 19vw;
   width: 4vw;
   z-index: 200;
 }
-body #stage .game-progress-time {
-  margin: 53vh auto 0;
+body #stage .infoBox {
+  margin: 20vh auto 0;
+}
+body #stage .infoBox .game-progress-time {
+  margin: 0 auto;
   width: 40vw;
   font-size: 3rem;
   text-align: center;
 }
-body #stage .game-progress-time p {
+body #stage .infoBox .game-progress-time p {
   display: none;
+}
+body #stage .infoBox .startBtn {
+  margin: 0 auto;
+  width: 40vw;
+  font-size: 3rem;
+  text-align: center;
+}
+body #stage .infoBox .againBtn {
+  display: none;
+  margin: 0 auto;
+  width: 40vw;
+  font-size: 3rem;
+  text-align: center;
 }

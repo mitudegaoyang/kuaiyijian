@@ -22,14 +22,13 @@ body{
       width: 100vw;
     }
     .chicken-box{
-      position: absolute;
+      position: relative;
       left: 25vw;
-      bottom: 25vh;
+      top: 16vh;
       width: 50vw;
       height: 35vh;
       transform-origin: center bottom;
       transform: rotate(0deg);
-
       .chicken{
         position: absolute;
         bottom: 0;
@@ -52,7 +51,7 @@ body{
       }
       .normalEyes{
         position: absolute;
-        bottom: 19vh;
+        top: 36%;
         left: 2vw;
         width: 46vw;
         z-index: 200;
@@ -60,7 +59,7 @@ body{
       .dizzyLeftEye{
         display: none;
         position: absolute;
-        bottom: 19vh;
+        top: 36%;
         left: 19vw;
         width: 4vw;
         z-index: 200;
@@ -68,19 +67,35 @@ body{
       .dizzyRightEye{
         display: none;
         position: absolute;
-        bottom: 19vh;
+        top: 36%;
         right: 19vw;
         width: 4vw;
         z-index: 200;
       }
     }
-    .game-progress-time{
-      margin: 53vh auto 0;
-      width: 40vw;
-      font-size: 3rem;
-      text-align: center;
-      p{
+    .infoBox{
+      margin: 20vh auto 0;
+      .game-progress-time{
+        margin:0 auto;
+        width: 40vw;
+        font-size: 3rem;
+        text-align: center;
+        p{
+          display: none;
+        }
+      }
+      .startBtn{
+        margin: 0 auto;
+        width: 40vw;
+        font-size: 3rem;
+        text-align: center;
+      }
+      .againBtn{
         display: none;
+        margin: 0 auto;
+        width: 40vw;
+        font-size: 3rem;
+        text-align: center;
       }
     }
   }
