@@ -16,6 +16,10 @@
     <link rel="stylesheet" href="css/index.css"/>
 </head>
 <body>
+<!--横屏-->
+<div id="layer">
+    <div class="layer_img"></div>
+</div>
 <div id="stage">
     <img src="img/chicken-gift.png" alt="chickenGift" class="chicken-gift"/>
     <div class="game-logo">我是logo</div>
@@ -25,18 +29,17 @@
         <img src="img/wing-left.png" alt="wingLeft" class="wingLeft"/>
         <img src="img/wing-right.png" alt="wingRight" class="wingRight"/>
         <img src="img/normal-eyes.png" alt="normalEyes" class="normalEyes"/>
-        <img src="img/dizzy-lefteye.png" alt="dizzyLeftEye" class="dizzyLeftEye"/>
-        <img src="img/dizzy-righteye.png" alt="dizzyRightEye" class="dizzyRightEye"/>
+        <img src="img/dizzy-lefteye.png" alt="dizzyLeftEye" class="gameStart dizzyLeftEye"/>
+        <img src="img/dizzy-righteye.png" alt="dizzyRightEye" class="gameStart dizzyRightEye"/>
     </div>
     <div class="infoBox">
         <div class="game-progress-time">
             <p>已坚持 <span>0</span> 秒</p>
         </div>
-        <div class="btn startBtn">开始游戏</div>
-        <div class="btn againBtn">重新开始</div>
+        <div class="btn startBtn gameStart">开始游戏</div>
     </div>
     <!-- 弹出框 -->
-    <div class="infopop">弹出框信息</div>
+    <div class="infopop gameStart">弹出框信息</div>
     <!-- 各类信息&按钮 -->
     <div class="btn ruleBtn">规则</div>
     <div class="btn musicBtn">音乐</div>

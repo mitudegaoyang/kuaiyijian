@@ -30,11 +30,8 @@ var game={
     start:function(){
         console.log("start");
         $('.chicken-gift').hide();
-        $('.dizzyLeftEye').hide();
-        $('.dizzyRightEye').css({display:"none"});
-        $('.startBtn').css({display:"none"});
-        $('.againBtn').css({display:"none"});
-        $('.infopop').css({display:"none"});
+        $('.startBtn').text("重新开始");
+        $('.gameStart').hide();
         $('.game-progress-time p').css({display:"block"});
         $('.game-progress-time p span').text("0");
         this.waggleGo = false;
@@ -114,10 +111,7 @@ var game={
             //$('.game-logo').text("coe:"+game.coe);
             this.deg += game.coe;
             if(this.deg >= 90 || this.deg <= -90){
-                $('.dizzyLeftEye').css({display:"block"});
-                $('.dizzyRightEye').css({display:"block"});
-                $('.againBtn').css({display:"block"});
-                $('.infopop').css({display:"block"});
+                $('.gameStart').show();
                 //$('.game-logo').text('游戏结束!');
                 game.coe = 0;
                 game.deg = 0;

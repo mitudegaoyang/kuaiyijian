@@ -1,6 +1,17 @@
 /**
  * Created by gaotianyang(13683265113@163.com) on 2017/3/23.
  **/
+@media all and (orientation: landscape) {
+  #layer {
+    display: block;
+    background: #000000;
+  }
+}
+@media all and (orientation: portrait) {
+  #layer {
+    display: none;
+  }
+}
 body {
   margin: 0;
 }
@@ -129,4 +140,17 @@ body #stage .infopop {
   background: url("../img/layerRed.png") no-repeat 0 0;
   background-size: 100% 100%;
   font-size: 3rem;
+}
+body #layer {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 100vh;
+}
+body #layer .layer_img {
+  margin: 10vh auto;
+  width: 80vh;
+  height: 80vh;
+  background: url("../img/boxbg.jpg") no-repeat 0 0;
+  background-size: 100% 100%;
 }
