@@ -89,18 +89,57 @@ body{
       height: 100vw;
       margin: 10vh 0;
       padding: 5vw;
+      overflow: hidden;
       span{
         box-sizing: border-box;
-        border: 1vw solid @stageBackground;
         border-radius: 3vw;
         float: left;
-        background: #000000;
+        background: url(../img/1.png) no-repeat 0 0 / cover #b38251;
+      }
+      .abrus{
+        background-image: url(../img/2.png);
       }
     }
     .lv1{
       span{
+        border: 1vw solid @stageBackground;
         width: 50%;
         height: 50%;
+      }
+    }
+    .lv2{
+      span{
+        border: 1vw solid @stageBackground;
+        width: 33%;
+        height: 33%;
+      }
+    }
+    .lv3{
+      span{
+        border: 1vw solid @stageBackground;
+        width: 25%;
+        height: 25%;
+      }
+    }
+    .lv4,.lv5{
+      span{
+        border: 0.5vw solid @stageBackground;
+        width: 20%;
+        height: 20%;
+      }
+    }
+    .lv6,.lv7{
+      span{
+        border: 0.5vw solid @stageBackground;
+        width: 16.667%;
+        height: 16.667%;
+      }
+    }
+    .lv8{
+      span{
+        border: 0.5vw solid @stageBackground;
+        width: 14.2857%;
+        height: 14.2857%;
       }
     }
   }
