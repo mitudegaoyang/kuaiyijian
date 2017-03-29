@@ -1,0 +1,155 @@
+/**
+ * Created by gaotianyang(13683265113@163.com) on 2017/3/28.
+ **/
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #F06060;
+  color: #fff;
+}
+body .btn {
+  position: absolute;
+  margin: 10px auto;
+  width: 20vw;
+  height: 10vw;
+  line-height: 10vw;
+  border-radius: 7px;
+  cursor: pointer;
+  background: #fcad26;
+  box-shadow: 0 5px #da9622;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-family: 'Microsoft Yahei', '微软雅黑';
+  font-size: 4rem;
+}
+body #index {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+}
+body #index .title {
+  font-size: 5rem;
+  padding: 10vh 0;
+  text-shadow: 1px 1px 1px #AB3C3C;
+}
+body #index .help {
+  font-size: 3rem;
+  color: #FFA1A1;
+}
+body #index .help b {
+  font-size: 6rem;
+}
+body #index .startBtn {
+  width: 40vw;
+  height: 10vh;
+  line-height: 10vh;
+  left: 30vw;
+  bottom: 10vh;
+  font-size: 3rem;
+}
+body #game {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  font-size: 4rem;
+}
+body #game .info {
+  height: 10vh;
+  line-height: 10vh;
+}
+body #game .info .lv {
+  position: absolute;
+  left: 5vw;
+}
+body #game .info .time {
+  overflow: hidden;
+  position: absolute;
+  left: 45vw;
+  top: 5vw;
+  width: 10vw;
+  height: 5vw;
+  line-height: 5vw;
+  padding: 1vw;
+  border-radius: 3vw;
+  background: #f09090;
+  color: #FFCACA;
+  font-size: 3rem;
+}
+body #game .info .pauseBtn {
+  position: absolute;
+  top: 3vw;
+  right: 5vw;
+}
+body #game #stage {
+  box-sizing: border-box;
+  border-radius: 5vw;
+  background: #dddddd;
+  width: 100vw;
+  height: 100vw;
+  margin: 10vh 0;
+  padding: 5vw;
+  overflow: hidden;
+}
+body #game #stage span {
+  box-sizing: border-box;
+  border-radius: 3vw;
+  float: left;
+  background: url(../img/1.png) no-repeat 0 0 / cover #b38251;
+}
+body #game #stage .abrus {
+  background-image: url(../img/2.png);
+}
+body #game .lv1 span {
+  border: 1vw solid #dddddd;
+  width: 50%;
+  height: 50%;
+}
+body #game .lv2 span {
+  border: 1vw solid #dddddd;
+  width: 33%;
+  height: 33%;
+}
+body #game .lv3 span {
+  border: 1vw solid #dddddd;
+  width: 25%;
+  height: 25%;
+}
+body #game .lv4 span,
+body #game .lv5 span {
+  border: 0.5vw solid #dddddd;
+  width: 20%;
+  height: 20%;
+}
+body #game .lv6 span,
+body #game .lv7 span {
+  border: 0.5vw solid #dddddd;
+  width: 16.667%;
+  height: 16.667%;
+}
+body #game .lv8 span {
+  border: 0.5vw solid #dddddd;
+  width: 14.2857%;
+  height: 14.2857%;
+}
+body #share {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  font-size: 4rem;
+}
+body #share .shareBtn {
+  width: 40vw;
+  height: 10vh;
+  line-height: 10vh;
+  left: 30vw;
+  bottom: 20vh;
+}
+body #share .particBtn {
+  width: 40vw;
+  height: 10vh;
+  line-height: 10vh;
+  left: 30vw;
+  bottom: 5vh;
+}
