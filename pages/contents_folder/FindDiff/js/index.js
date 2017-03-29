@@ -2,19 +2,24 @@
  * Created by gaotianyang(13683265113@163.com) on 2017/3/28.
  **/
 var game={
+    time: 60,   //倒计时
     lv: 1,      //关数
     //初始化
     init:function(){
-        game.skip('game');
+        game.skip('share');
         $('.lv span').text(game.lv);
         $('.startBtn').click(function(){
+            game.time = 16;
+            game.lv = 1;
             game.skip('game');
+            game.countDown(1000);
         });
         $('.particBtn').click(function(){
             game.skip('index');
         });
         game.renovate();
     },
+    //页面跳转
     skip:function(className){
         $('#index').hide();
         $('#game').hide();
@@ -65,13 +70,37 @@ var game={
             break;
         }
     },
+    //绘制格子
     draw:function(num){
         $('#stage').html("");
         for(var i=0;i<num;i++){
             $('#stage').append("<span></span>")
         }
-        $('#stage span:nth-child('+num+')').addClass("abrus");
+        $('#stage span:nth-child('+game.GetRandomNum(1,num)+')').addClass("abrus");
         game.monitor();
+    },
+    //获得随机数
+    GetRandomNum:function(Min,Max){
+        var Range = Max - Min;
+        var Rand = Math.random();
+        return(Min + Math.round(Rand * Range));
+    },
+    //倒计时
+    countDown:function timeout(time){
+        $('.time').text(game.time);
+        game.time--;
+        setTimeout(function(){
+            if(game.time<0){
+                if(game.lv<10){
+                    alert("不要气馁，虽然只抢到"+game.lv+"碗粥，叫上小伙伴一起多抢几碗吧！");
+                }else{
+                    alert("厉害啊！竟然抢到了"+game.lv+"碗粥，还不叫小伙伴一起参加？");
+                }
+
+                return;
+            }
+            timeout(time);
+        },time);
     }
 };
 
