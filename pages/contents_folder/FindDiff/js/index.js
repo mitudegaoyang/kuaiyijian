@@ -2,13 +2,15 @@
  * Created by gaotianyang(13683265113@163.com) on 2017/3/28.
  **/
 var game={
-    time: 60,   //倒计时
-    lv: 1,      //关数
+    time: 60,       //倒计时
+    lv: 1,          //关数
+    gameGo: false,  //游戏是否进行
     //初始化
     init:function(){
         game.skip('share');
         $('.lv span').text(game.lv);
         $('.startBtn').click(function(){
+            game.gameGo = true;
             game.time = 60;
             game.lv = 1;
             game.skip('game');
@@ -16,6 +18,10 @@ var game={
         });
         $('.particBtn').click(function(){
             game.skip('index');
+        });
+        $('.pauseBtn').click(function(){
+            game.gameGo = !game.gameGo;
+            game.countDown(1000);
         });
         game.renovate();
     },
@@ -35,14 +41,8 @@ var game={
                 $('#stage').removeClass();
                 $('#stage').addClass("lv"+game.lv);
             }
-            var r = game.GetRandomNum(0,256);
-            var g = game.GetRandomNum(0,256);
-            var b = game.GetRandomNum(0,256);
-            console.log(r);
-            console.log(g);
-            console.log(b);
             game.renovate();
-            $('#stage span').css({backgroundColor:"rgb("+r+","+g+","+b+")"});
+            $('#stage span').css({backgroundColor:"rgb("+game.GetRandomNum(0,256)+","+game.GetRandomNum(0,256)+","+game.GetRandomNum(0,256)+")"});
         });
     },
     //绘制栅格
@@ -100,19 +100,22 @@ var game={
     },
     //倒计时
     countDown:function timeout(time){
-        $('.time').text(game.time);
-        game.time--;
-        setTimeout(function(){
-            if(game.time<0){
-                if(game.lv<10){
-                    alert("不要气馁，虽然只抢到"+game.lv+"碗粥，叫上小伙伴一起多抢几碗吧！");
-                }else{
-                    alert("厉害啊！竟然抢到了"+game.lv+"碗粥，还不叫小伙伴一起参加？");
+        console.log(game.gameGo);
+        if(game.gameGo){
+            $('.time').text(game.time);
+            game.time--;
+            setTimeout(function(){
+                if(game.time<0){
+                    if(game.lv<10){
+                        alert("不要气馁，虽然只抢到"+game.lv+"碗粥，叫上小伙伴一起多抢几碗吧！");
+                    }else{
+                        alert("厉害啊！竟然抢到了"+game.lv+"碗粥，还不叫小伙伴一起参加？");
+                    }
+                    return;
                 }
-                return;
-            }
-            timeout(time);
-        },time);
+                timeout(time);
+            },time);
+        }
     }
 };
 
