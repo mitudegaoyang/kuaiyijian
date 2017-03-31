@@ -9,7 +9,7 @@ var game={
         game.skip('share');
         $('.lv span').text(game.lv);
         $('.startBtn').click(function(){
-            game.time = 30;
+            game.time = 60;
             game.lv = 1;
             game.skip('game');
             game.countDown(1000);
@@ -31,11 +31,18 @@ var game={
         $('.abrus').click(function(){
             game.lv++;
             $('.lv span').text(game.lv);
-            if(game.lv <= 8){
+            if(game.lv <= 17){
                 $('#stage').removeClass();
                 $('#stage').addClass("lv"+game.lv);
             }
+            var r = game.GetRandomNum(0,256);
+            var g = game.GetRandomNum(0,256);
+            var b = game.GetRandomNum(0,256);
+            console.log(r);
+            console.log(g);
+            console.log(b);
             game.renovate();
+            $('#stage span').css({backgroundColor:"rgb("+r+","+g+","+b+")"});
         });
     },
     //绘制栅格
@@ -58,8 +65,21 @@ var game={
             case 7:
                 game.draw(36);
             break;
-            default:
+            case 8:
+            case 9:
+            case 10:
                 game.draw(49);
+            break;
+            case 11:
+            case 12:
+            case 13:
+            case 14:
+            case 15:
+            case 16:
+                game.draw(64);
+                break;
+            default:
+                game.draw(81);
             break;
         }
     },
@@ -89,7 +109,6 @@ var game={
                 }else{
                     alert("厉害啊！竟然抢到了"+game.lv+"碗粥，还不叫小伙伴一起参加？");
                 }
-
                 return;
             }
             timeout(time);

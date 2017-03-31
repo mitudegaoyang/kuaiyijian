@@ -85,7 +85,7 @@ body #game .info .pauseBtn {
 body #game #stage {
   box-sizing: border-box;
   border-radius: 5vw;
-  background: #dddddd;
+  background: #ddd;
   width: 100vw;
   height: 100vw;
   margin: 10vh 0;
@@ -102,36 +102,53 @@ body #game #stage .abrus {
   background-image: url(../img/2.png);
 }
 body #game .lv1 span {
-  border: 1vw solid #dddddd;
+  border: 1vw solid #ddd;
   width: 50%;
   height: 50%;
 }
 body #game .lv2 span {
-  border: 1vw solid #dddddd;
+  border: 1vw solid #ddd;
   width: 33%;
   height: 33%;
 }
 body #game .lv3 span {
-  border: 1vw solid #dddddd;
+  border: 1vw solid #ddd;
   width: 25%;
   height: 25%;
 }
 body #game .lv4 span,
 body #game .lv5 span {
-  border: 0.5vw solid #dddddd;
+  border: 0.5vw solid #ddd;
   width: 20%;
   height: 20%;
 }
 body #game .lv6 span,
 body #game .lv7 span {
-  border: 0.5vw solid #dddddd;
+  border: 0.5vw solid #ddd;
   width: 16.667%;
   height: 16.667%;
 }
-body #game .lv8 span {
-  border: 0.5vw solid #dddddd;
+body #game .lv8 span,
+body #game .lv9 span,
+body #game .lv10 span {
+  border: 0.5vw solid #ddd;
   width: 14.2857%;
   height: 14.2857%;
+}
+body #game .lv11 span,
+body #game .lv12 span,
+body #game .lv13 span,
+body #game .lv14 span,
+body #game .lv15 span,
+body #game .lv16 span {
+  border: 0.5vw solid #ddd;
+  width: 12.5%;
+  height: 12.5%;
+}
+body #game .lv17 span {
+  border: 0.5vw solid #ddd;
+  width: 11.11%;
+  height: 11.11%;
 }
 body #share {
   width: 100vw;
